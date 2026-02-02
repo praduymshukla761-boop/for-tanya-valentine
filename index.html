@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Only You ❤️</title>
+<title>My Baby ❤️</title>
 
 <style>
 body{
@@ -13,8 +13,8 @@ body{
   font-family:'Segoe UI',sans-serif;
 }
 
-/* 🌸 FLIRTY LOVE BACKGROUND */
-.bg-love{
+/* BACKGROUND LOVE WHISPERS */
+.bg{
   position:fixed;
   inset:0;
   display:flex;
@@ -22,45 +22,41 @@ body{
   justify-content:center;
   align-content:center;
   text-align:center;
-  color:rgba(255,105,180,0.08);
+  color:rgba(255,105,180,0.07);
   font-size:22px;
-  line-height:1.9;
+  line-height:2;
   pointer-events:none;
-  animation:floatText 80s linear infinite;
+  animation:move 90s linear infinite;
 }
-
-@keyframes floatText{
+@keyframes move{
   from{transform:translateY(0);}
   to{transform:translateY(-60%);}
 }
 
-/* 💞 MAIN CARD */
+/* MAIN LOVE CARD */
 .card{
   position:relative;
   z-index:2;
   width:90%;
   max-width:420px;
-  background:rgba(255,255,255,0.09);
+  background:rgba(255,255,255,0.08);
   backdrop-filter:blur(20px);
   padding:38px;
   border-radius:45px;
   text-align:center;
   box-shadow:0 50px 100px rgba(0,0,0,0.8);
-  animation:softAppear 4s ease;
+  animation:appear 3s ease;
 }
-
-@keyframes softAppear{
-  from{opacity:0;transform:scale(0.65);}
+@keyframes appear{
+  from{opacity:0;transform:scale(0.7);}
   to{opacity:1;transform:scale(1);}
 }
 
 h1{
   color:#fff;
   font-weight:500;
-  letter-spacing:0.6px;
   text-shadow:0 0 30px rgba(255,255,255,0.9);
 }
-
 p{
   margin-top:18px;
   color:#fff;
@@ -83,15 +79,14 @@ button{
 }
 button:hover{transform:scale(1.15);}
 
-/* 💓 FLOATING HEARTS */
+/* HEARTS */
 .heart{
   position:absolute;
   color:rgba(255,120,180,0.6);
   font-size:20px;
-  animation:floatHeart 14s linear infinite;
+  animation:float 14s linear infinite;
 }
-
-@keyframes floatHeart{
+@keyframes float{
   0%{transform:translateY(120vh);opacity:0;}
   30%{opacity:1;}
   100%{transform:translateY(-20vh);opacity:0;}
@@ -101,84 +96,100 @@ button:hover{transform:scale(1.15);}
 
 <body>
 
-<!-- 💖 BACKGROUND LOVE WORDS -->
-<div class="bg-love">
+<div class="bg">
   i love you so much my baby my baacha my wifey my jaan •  
-  i love you so so so so so so so so so so so so much •  
-  ummah 😘 ummah 😘 ummah 😘 •  
-  you drive me crazy in the softest way •  
-  my heart flirts with you even when you’re silent •  
-  i love you endlessly my baby •  
-  come here let me steal you for a moment •  
-  i love you so much my baby my baacha my wifey my jaan •  
-  so so so so so so so so so so so so much •  
-  ummah 😘
+  so so so so so so so so so so so much •  
+  ummah 😘 • i choose you every single day •  
+  my heart is yours • forever •  
 </div>
 
-<!-- 💕 MAIN FLIRTY MESSAGE -->
 <div class="card" id="card">
-  <h1>hey… come closer ❤️</h1>
+  <h1>🌹 Rose Day</h1>
   <p>
-    shhh…<br><br>
-
-    don’t think.<br>
-    don’t rush.<br>
-    just feel this for a second.<br><br>
-
-    my baby…<br>
-    do you know what you do to me?<br><br>
-
-    you sit there quietly<br>
-    and my heart starts flirting with you<br>
-    without asking me first.<br><br>
-
-    my baacha.<br>
-    my wifey.<br>
-    my jaan.<br><br>
-
-    i love you so so so so so so so so so so so so much.<br><br>
-
-    come here…<br>
-    let me steal you for a moment 😘
+    My baby…<br><br>
+    I give you a rose not from my hand,
+    but from my heart.<br>
+    Soft. Real. Only yours.
   </p>
-  <button onclick="moreLove()">don’t stop 🤍</button>
+  <button onclick="next()">next 🤍</button>
 </div>
 
 <script>
-function moreLove(){
-  document.getElementById("card").innerHTML = `
-    <h1>mmh… stay right here 🤍</h1>
-    <p>
-      closer… even closer…<br><br>
+const days = [
+  {
+    title:"💍 Propose Day",
+    text:`I don’t ask loudly.<br><br>
+    I just come close and whisper —
+    my heart has chosen you,
+    again and again.`
+  },
+  {
+    title:"🍫 Chocolate Day",
+    text:`You make life sweeter without trying.<br><br>
+    One thought of you
+    melts everything heavy inside me.`
+  },
+  {
+    title:"🧸 Teddy Day",
+    text:`Come here…<br><br>
+    Until I can really hold you,
+    let my love wrap around you
+    like a warm hug.`
+  },
+  {
+    title:"🤞 Promise Day",
+    text:`Yeh vaada raha…<br><br>
+    I may not be perfect,
+    but my heart will always stay with you.`
+  },
+  {
+    title:"🤗 Hug Day",
+    text:`Stay still for a moment…<br><br>
+    Feel my arms around you,
+    holding you close,
+    like you belong right here.`
+  },
+  {
+    title:"💋 Kiss Day",
+    text:`A soft kiss…<br><br>
+    not rushed,
+    not loud,
+    just enough to say —
+    you are deeply loved.`
+  },
+  {
+    title:"❤️ Valentine’s Day",
+    text:`After every feeling,
+    every promise,
+    every quiet moment…<br><br>
+    I choose you.<br><br>
+    My baby. My baacha. My wifey. My jaan.<br><br>
+    <b>I love you so so so so so so so so so much.</b><br><br>
+    Ummah 😘`
+  }
+];
 
-      feel my hands around you,<br>
-      slow… gentle… possessive in the sweetest way.<br><br>
-
-      if loving you was a crime,<br>
-      i’d happily be guilty every single day.<br><br>
-
-      my baby.<br>
-      my baacha.<br>
-      my wifey.<br>
-      my jaan.<br><br>
-
-      i love you endlessly…<br>
-      obsessively…<br>
-      ridiculously…<br><br>
-
-      ummah 😘 ummah 😘 ummah 😘
-    </p>
-  `;
+let i=0;
+function next(){
+  const c=document.getElementById("card");
+  if(i<days.length){
+    c.innerHTML=`
+      <h1>${days[i].title}</h1>
+      <p>${days[i].text}</p>
+      <button onclick="next()">next 🤍</button>
+    `;
+    i++;
+  }
 }
 
-// floating hearts
+// hearts
 setInterval(()=>{
- const h=document.createElement("div");
- h.className="heart";
- h.innerHTML="💗";
- h.style.left=Math.random()*100+"vw";
- document.body.appendChild(h);
- setTimeout(()=>h.remove(),14000);
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💗";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),14000);
 },700);
 </script>
 
