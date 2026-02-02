@@ -8,7 +8,7 @@
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   align-items: center;
@@ -16,32 +16,33 @@ body {
   overflow: hidden;
 }
 
-.container {
+.card {
   background: white;
   width: 90%;
   max-width: 420px;
   padding: 30px;
   border-radius: 25px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  animation: fade 1s ease;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  animation: fadeIn 1s ease;
 }
 
 h1 {
   color: #ff4d6d;
+  margin-bottom: 15px;
 }
 
 p {
   color: #444;
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 16px;
 }
 
 button {
-  margin-top: 15px;
-  padding: 12px 20px;
+  margin-top: 20px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   background: #ff4d6d;
   color: white;
   font-size: 15px;
@@ -57,8 +58,8 @@ button:hover {
 .heart {
   position: absolute;
   font-size: 18px;
-  animation: float 6s linear infinite;
   color: rgba(255,255,255,0.8);
+  animation: float 6s linear infinite;
 }
 
 @keyframes float {
@@ -67,8 +68,8 @@ button:hover {
   100% { transform: translateY(-10vh); opacity: 0; }
 }
 
-@keyframes fade {
-  from { opacity: 0; transform: scale(0.8); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.85); }
   to { opacity: 1; transform: scale(1); }
 }
 </style>
@@ -76,75 +77,77 @@ button:hover {
 
 <body>
 
-<div class="container" id="content">
+<div class="card" id="content">
   <h1>🌹 Rose Day 🌹</h1>
   <p>
     My baby <b>Tanya</b>,<br><br>
-    If I was there today, I’d gently place a rose in your hands,
-    look into your eyes and say —<br>
-    *You are the most beautiful part of my life.*
+    If I were standing in front of you right now,
+    I’d smile softly and place a rose in your hand.
+    Not because it’s Rose Day —
+    but because you deserve to be reminded
+    how special you are to me.
   </p>
-  <button onclick="nextDay()">Next ❤️</button>
+  <button onclick="next()">Next ❤️</button>
 </div>
 
 <script>
 const days = [
   {
     title: "💍 Propose Day 💍",
-    text: "Tanya, I don’t need fancy words. I just want to say — my heart chose you long ago. Will you always stay in my life, like you are now?"
+    text: "Tanya… I don’t need a perfect moment to ask you this. I just know my heart feels safe with you. I choose you — today, tomorrow, always."
   },
   {
     title: "🍫 Chocolate Day 🍫",
-    text: "Life with you is sweeter than any chocolate. Even on my worst days, thinking about you melts everything."
+    text: "Life gets bitter sometimes, but you make it sweet without even trying. Just one thought of you is enough to change my whole mood."
   },
   {
     title: "🧸 Teddy Day 🧸",
-    text: "If I were there, I’d hug you tight and never let go. Until then, imagine my arms around you — warm, safe, forever."
+    text: "I know I can’t hold you right now… but close your eyes for a second. Feel that warmth? That’s me, wrapping you in the tightest hug."
   },
   {
     title: "🤞 Promise Day 🤞",
-    text: "I promise to stand by you, even from miles away. Distance can test us, but it can never break us."
+    text: "I promise to listen to you, understand you, and never give up on us. Distance may test us, but my heart never moves away from you."
   },
   {
     title: "🤗 Hug Day 🤗",
-    text: "Close your eyes for a moment… feel that? That’s my hug reaching you, saying everything words can’t."
+    text: "If hugs could travel, you’d feel mine around you already. A hug that says — I’m here, I care, and you’re never alone."
   },
   {
     title: "💋 Kiss Day 💋",
-    text: "A soft kiss on your forehead, full of love, respect, and all the feelings I hold just for you."
+    text: "A gentle kiss on your forehead… not rushed, not loud. Just full of love, respect, and everything I feel for you."
   },
   {
     title: "❤️ Valentine’s Day ❤️",
-    text: "My Tanya, you are my today, my tomorrow, and every heartbeat in between. No matter where we are, my love is always with you."
+    text: "My Tanya… you are not just someone I love. You are where my heart feels at home. No matter the distance, I am always yours."
   }
 ];
 
-let index = 0;
+let i = 0;
 
-function nextDay() {
-  if (index < days.length) {
+function next() {
+  if (i < days.length) {
     document.getElementById("content").innerHTML = `
-      <h1>${days[index].title}</h1>
-      <p>${days[index].text}</p>
-      <button onclick="nextDay()">Next 💖</button>
+      <h1>${days[i].title}</h1>
+      <p>${days[i].text}</p>
+      <button onclick="next()">Next 💖</button>
     `;
-    index++;
+    i++;
   } else {
     alert("I love you endlessly, Tanya ❤️");
   }
 }
 
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 20 + 15 + "px";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
+function heart() {
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "❤️";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.fontSize = Math.random() * 20 + 15 + "px";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 6000);
 }
 
-setInterval(createHeart, 350);
+setInterval(heart, 350);
 </script>
 
 </body>
