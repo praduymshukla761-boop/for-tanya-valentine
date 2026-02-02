@@ -8,7 +8,7 @@
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(135deg, #2b1055, #7597de);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,14 +18,15 @@
 
   .day {
     display: none;
-    background: white;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
     width: 90%;
     max-width: 420px;
-    padding: 30px;
-    border-radius: 25px;
+    padding: 32px;
+    border-radius: 30px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    animation: fade 1s ease;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    animation: fade 1.5s ease;
   }
 
   .active {
@@ -33,63 +34,83 @@
   }
 
   h1 {
-    color: #ff4d6d;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255,255,255,0.6);
   }
 
   p {
-    color: #444;
+    color: #f5f5f5;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
   button {
-    margin-top: 20px;
-    padding: 12px 24px;
+    margin: 10px;
+    padding: 14px 26px;
     border: none;
-    border-radius: 25px;
-    background: #ff4d6d;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
     color: white;
     font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(255,120,150,0.6);
   }
 
   button:hover {
-    background: #e63950;
-    transform: scale(1.05);
+    transform: scale(1.08);
   }
 
-  @keyframes fade {
-    from { opacity: 0; transform: scale(0.85); }
-    to { opacity: 1; transform: scale(1); }
+  .music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    padding: 14px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
   }
 
   .heart {
     position: absolute;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,180,200,0.7);
     font-size: 18px;
-    animation: float 6s linear infinite;
+    animation: float 8s linear infinite;
   }
 
   @keyframes float {
-    0% { transform: translateY(100vh); opacity: 0; }
-    10% { opacity: 1; }
+    0% { transform: translateY(110vh); opacity: 0; }
+    15% { opacity: 1; }
     100% { transform: translateY(-10vh); opacity: 0; }
+  }
+
+  @keyframes fade {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
   }
 </style>
 </head>
 
 <body>
 
+<!-- 🎵 ROMANTIC MUSIC -->
+<audio id="music" loop>
+  <source src="yeh-vaada-raha.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
 <!-- 🌹 ROSE DAY -->
 <div class="day active" id="rose">
   <h1>🌹 Rose Day 🌹</h1>
   <p>
     My Tanya,<br><br>
-    If I were standing in front of you today,
-    I’d place a rose in your hand and smile.
-    Not because it’s Rose Day,
-    but because you deserve to feel special every single day.
+    If I were there,
+    I’d place a rose in your hand
+    and smile softly,
+    just to see you smile back.
   </p>
   <button onclick="next('rose','propose')">Next ❤️</button>
 </div>
@@ -98,9 +119,10 @@
 <div class="day" id="propose">
   <h1>💍 Propose Day 💍</h1>
   <p>
-    I don’t need a perfect moment to ask you this.<br><br>
-    I just know my heart feels at home with you.
-    I choose you — today, tomorrow, always.
+    I don’t need a perfect moment.<br><br>
+    My heart already knows —
+    it chooses you,
+    today, tomorrow, always.
   </p>
   <button onclick="next('propose','chocolate')">Next ❤️</button>
 </div>
@@ -109,10 +131,10 @@
 <div class="day" id="chocolate">
   <h1>🍫 Chocolate Day 🍫</h1>
   <p>
-    Life can be bitter sometimes,
-    but you make it sweet without even trying.<br><br>
-    One thought of you is enough
-    to melt every stress in my heart.
+    Life feels sweeter
+    the moment you come into my thoughts.<br><br>
+    You melt every worry,
+    just by being you.
   </p>
   <button onclick="next('chocolate','teddy')">Next ❤️</button>
 </div>
@@ -121,10 +143,10 @@
 <div class="day" id="teddy">
   <h1>🧸 Teddy Day 🧸</h1>
   <p>
-    I wish I could pull you into my arms right now
+    I wish I could pull you close
     and never let go.<br><br>
-    Until then, imagine this —
-    my hug, warm and tight, just for you.
+    Until then,
+    imagine my arms around you.
   </p>
   <button onclick="next('teddy','promise')">Next ❤️</button>
 </div>
@@ -133,10 +155,9 @@
 <div class="day" id="promise">
   <h1>🤞 Promise Day 🤞</h1>
   <p>
-    I promise to stand by you,
-    even when things are hard.<br><br>
-    Distance may test us,
-    but my heart never moves away from you.
+    Yeh vaada raha…<br><br>
+    Distance may exist,
+    but my heart never leaves you.
   </p>
   <button onclick="next('promise','hug')">Next ❤️</button>
 </div>
@@ -147,8 +168,7 @@
   <p>
     Close your eyes for a moment…<br><br>
     Feel that warmth?
-    That’s my hug reaching you,
-    saying you’re safe and loved.
+    That’s my hug reaching you.
   </p>
   <button onclick="next('hug','kiss')">Next ❤️</button>
 </div>
@@ -157,45 +177,63 @@
 <div class="day" id="kiss">
   <h1>💋 Kiss Day 💋</h1>
   <p>
-    A soft kiss on your forehead,
-    full of love and respect.<br><br>
-    Not rushed. Not loud.
-    Just us, feeling everything quietly.
+    A soft kiss on your forehead…<br><br>
+    No rush.
+    No noise.
+    Just love and respect.
   </p>
-  <button onclick="next('kiss','valentine')">Next ❤️</button>
+  <button onclick="next('kiss','question')">Next ❤️</button>
 </div>
 
-<!-- ❤️ VALENTINE DAY -->
-<div class="day" id="valentine">
-  <h1>❤️ Valentine’s Day ❤️</h1>
+<!-- ❤️ QUESTION -->
+<div class="day" id="question">
+  <h1>❤️ My Question ❤️</h1>
   <p>
-    My Tanya,<br><br>
-    You are my today,
-    my tomorrow,
-    and every heartbeat in between.<br><br>
-    No matter where we are,
-    my love is always with you.
+    I’ve walked every step with you…<br><br>
+    Will you be my Valentine? 💕
   </p>
-  <button onclick="alert('I love you endlessly, Tanya ❤️')">❤️</button>
+  <button onclick="yesLove()">Yes 💖</button>
+  <button onclick="yesLove()">Always Yes 😉</button>
 </div>
 
 <script>
-function next(current, next) {
-  document.getElementById(current).classList.remove("active");
-  document.getElementById(next).classList.add("active");
+function next(a, b) {
+  document.getElementById(a).classList.remove("active");
+  document.getElementById(b).classList.add("active");
 }
 
-function heart() {
+function yesLove() {
+  document.getElementById("question").innerHTML = `
+    <h1>🤗 Forever Us 🤗</h1>
+    <p>
+      Come here…<br><br>
+      My arms around you,<br>
+      your heart close to mine.<br><br>
+
+      <b>I love you endlessly, Tanya.</b><br><br>
+
+      Yeh vaada raha…<br>
+      now and forever ❤️
+    </p>
+  `;
+}
+
+function toggleMusic() {
+  const music = document.getElementById("music");
+  if (music.paused) music.play();
+  else music.pause();
+}
+
+// floating hearts
+setInterval(() => {
   const h = document.createElement("div");
   h.className = "heart";
   h.innerHTML = "❤️";
   h.style.left = Math.random() * 100 + "vw";
   h.style.fontSize = Math.random() * 20 + 15 + "px";
   document.body.appendChild(h);
-  setTimeout(() => h.remove(), 6000);
-}
-
-setInterval(heart, 350);
+  setTimeout(() => h.remove(), 8000);
+}, 400);
 </script>
 
 </body>
