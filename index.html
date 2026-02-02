@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Tanya ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container {
+  background: white;
+  width: 90%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fade 1s ease;
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #e63950;
+}
+
+.heart {
+  position: absolute;
+  font-size: 18px;
+  animation: float 6s linear infinite;
+  color: rgba(255,255,255,0.8);
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="content">
+  <h1>🌹 Rose Day 🌹</h1>
+  <p>
+    My baby <b>Tanya</b>,<br><br>
+    If I was there today, I’d gently place a rose in your hands,
+    look into your eyes and say —<br>
+    *You are the most beautiful part of my life.*
+  </p>
+  <button onclick="nextDay()">Next ❤️</button>
+</div>
+
+<script>
+const days = [
+  {
+    title: "💍 Propose Day 💍",
+    text: "Tanya, I don’t need fancy words. I just want to say — my heart chose you long ago. Will you always stay in my life, like you are now?"
+  },
+  {
+    title: "🍫 Chocolate Day 🍫",
+    text: "Life with you is sweeter than any chocolate. Even on my worst days, thinking about you melts everything."
+  },
+  {
+    title: "🧸 Teddy Day 🧸",
+    text: "If I were there, I’d hug you tight and never let go. Until then, imagine my arms around you — warm, safe, forever."
+  },
+  {
+    title: "🤞 Promise Day 🤞",
+    text: "I promise to stand by you, even from miles away. Distance can test us, but it can never break us."
+  },
+  {
+    title: "🤗 Hug Day 🤗",
+    text: "Close your eyes for a moment… feel that? That’s my hug reaching you, saying everything words can’t."
+  },
+  {
+    title: "💋 Kiss Day 💋",
+    text: "A soft kiss on your forehead, full of love, respect, and all the feelings I hold just for you."
+  },
+  {
+    title: "❤️ Valentine’s Day ❤️",
+    text: "My Tanya, you are my today, my tomorrow, and every heartbeat in between. No matter where we are, my love is always with you."
+  }
+];
+
+let index = 0;
+
+function nextDay() {
+  if (index < days.length) {
+    document.getElementById("content").innerHTML = `
+      <h1>${days[index].title}</h1>
+      <p>${days[index].text}</p>
+      <button onclick="nextDay()">Next 💖</button>
+    `;
+    index++;
+  } else {
+    alert("I love you endlessly, Tanya ❤️");
+  }
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 350);
+</script>
+
+</body>
+</html>
