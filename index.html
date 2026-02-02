@@ -2,238 +2,184 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Tanya ❤️</title>
+<title>Only You ❤️</title>
 
 <style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #2b1055, #7597de);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-  }
+body{
+  margin:0;
+  height:100vh;
+  background:#000;
+  overflow:hidden;
+  font-family:'Segoe UI',sans-serif;
+}
 
-  .day {
-    display: none;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(14px);
-    width: 90%;
-    max-width: 420px;
-    padding: 32px;
-    border-radius: 30px;
-    text-align: center;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-    animation: fade 1.5s ease;
-  }
+/* 🌸 FLIRTY LOVE BACKGROUND */
+.bg-love{
+  position:fixed;
+  inset:0;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-content:center;
+  text-align:center;
+  color:rgba(255,105,180,0.08);
+  font-size:22px;
+  line-height:1.9;
+  pointer-events:none;
+  animation:floatText 80s linear infinite;
+}
 
-  .active {
-    display: block;
-  }
+@keyframes floatText{
+  from{transform:translateY(0);}
+  to{transform:translateY(-60%);}
+}
 
-  h1 {
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(255,255,255,0.6);
-  }
+/* 💞 MAIN CARD */
+.card{
+  position:relative;
+  z-index:2;
+  width:90%;
+  max-width:420px;
+  background:rgba(255,255,255,0.09);
+  backdrop-filter:blur(20px);
+  padding:38px;
+  border-radius:45px;
+  text-align:center;
+  box-shadow:0 50px 100px rgba(0,0,0,0.8);
+  animation:softAppear 4s ease;
+}
 
-  p {
-    color: #f5f5f5;
-    font-size: 16px;
-    line-height: 1.8;
-  }
+@keyframes softAppear{
+  from{opacity:0;transform:scale(0.65);}
+  to{opacity:1;transform:scale(1);}
+}
 
-  button {
-    margin: 10px;
-    padding: 14px 26px;
-    border: none;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 10px 25px rgba(255,120,150,0.6);
-  }
+h1{
+  color:#fff;
+  font-weight:500;
+  letter-spacing:0.6px;
+  text-shadow:0 0 30px rgba(255,255,255,0.9);
+}
 
-  button:hover {
-    transform: scale(1.08);
-  }
+p{
+  margin-top:18px;
+  color:#fff;
+  font-size:16px;
+  line-height:2.1;
+  text-shadow:0 0 15px rgba(0,0,0,0.7);
+}
 
-  .music-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(255,255,255,0.25);
-    border-radius: 50%;
-    padding: 14px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-  }
+button{
+  margin-top:28px;
+  padding:16px 42px;
+  border:none;
+  border-radius:45px;
+  background:linear-gradient(135deg,#ff4f81,#ff9bb3);
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 18px 40px rgba(255,90,140,0.8);
+  transition:0.6s;
+}
+button:hover{transform:scale(1.15);}
 
-  .heart {
-    position: absolute;
-    color: rgba(255,180,200,0.7);
-    font-size: 18px;
-    animation: float 8s linear infinite;
-  }
+/* 💓 FLOATING HEARTS */
+.heart{
+  position:absolute;
+  color:rgba(255,120,180,0.6);
+  font-size:20px;
+  animation:floatHeart 14s linear infinite;
+}
 
-  @keyframes float {
-    0% { transform: translateY(110vh); opacity: 0; }
-    15% { opacity: 1; }
-    100% { transform: translateY(-10vh); opacity: 0; }
-  }
-
-  @keyframes fade {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-  }
+@keyframes floatHeart{
+  0%{transform:translateY(120vh);opacity:0;}
+  30%{opacity:1;}
+  100%{transform:translateY(-20vh);opacity:0;}
+}
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 ROMANTIC MUSIC -->
-<audio id="music" loop>
-  <source src="yeh-vaada-raha.mp3" type="audio/mpeg">
-</audio>
-
-<button class="music-btn" onclick="toggleMusic()">🎵</button>
-
-<!-- 🌹 ROSE DAY -->
-<div class="day active" id="rose">
-  <h1>🌹 Rose Day 🌹</h1>
-  <p>
-    My Tanya,<br><br>
-    If I were there,
-    I’d place a rose in your hand
-    and smile softly,
-    just to see you smile back.
-  </p>
-  <button onclick="next('rose','propose')">Next ❤️</button>
+<!-- 💖 BACKGROUND LOVE WORDS -->
+<div class="bg-love">
+  i love you so much my baby my baacha my wifey my jaan •  
+  i love you so so so so so so so so so so so so much •  
+  ummah 😘 ummah 😘 ummah 😘 •  
+  you drive me crazy in the softest way •  
+  my heart flirts with you even when you’re silent •  
+  i love you endlessly my baby •  
+  come here let me steal you for a moment •  
+  i love you so much my baby my baacha my wifey my jaan •  
+  so so so so so so so so so so so so much •  
+  ummah 😘
 </div>
 
-<!-- 💍 PROPOSE DAY -->
-<div class="day" id="propose">
-  <h1>💍 Propose Day 💍</h1>
+<!-- 💕 MAIN FLIRTY MESSAGE -->
+<div class="card" id="card">
+  <h1>hey… come closer ❤️</h1>
   <p>
-    I don’t need a perfect moment.<br><br>
-    My heart already knows —
-    it chooses you,
-    today, tomorrow, always.
-  </p>
-  <button onclick="next('propose','chocolate')">Next ❤️</button>
-</div>
+    shhh…<br><br>
 
-<!-- 🍫 CHOCOLATE DAY -->
-<div class="day" id="chocolate">
-  <h1>🍫 Chocolate Day 🍫</h1>
-  <p>
-    Life feels sweeter
-    the moment you come into my thoughts.<br><br>
-    You melt every worry,
-    just by being you.
-  </p>
-  <button onclick="next('chocolate','teddy')">Next ❤️</button>
-</div>
+    don’t think.<br>
+    don’t rush.<br>
+    just feel this for a second.<br><br>
 
-<!-- 🧸 TEDDY DAY -->
-<div class="day" id="teddy">
-  <h1>🧸 Teddy Day 🧸</h1>
-  <p>
-    I wish I could pull you close
-    and never let go.<br><br>
-    Until then,
-    imagine my arms around you.
-  </p>
-  <button onclick="next('teddy','promise')">Next ❤️</button>
-</div>
+    my baby…<br>
+    do you know what you do to me?<br><br>
 
-<!-- 🤞 PROMISE DAY -->
-<div class="day" id="promise">
-  <h1>🤞 Promise Day 🤞</h1>
-  <p>
-    Yeh vaada raha…<br><br>
-    Distance may exist,
-    but my heart never leaves you.
-  </p>
-  <button onclick="next('promise','hug')">Next ❤️</button>
-</div>
+    you sit there quietly<br>
+    and my heart starts flirting with you<br>
+    without asking me first.<br><br>
 
-<!-- 🤗 HUG DAY -->
-<div class="day" id="hug">
-  <h1>🤗 Hug Day 🤗</h1>
-  <p>
-    Close your eyes for a moment…<br><br>
-    Feel that warmth?
-    That’s my hug reaching you.
-  </p>
-  <button onclick="next('hug','kiss')">Next ❤️</button>
-</div>
+    my baacha.<br>
+    my wifey.<br>
+    my jaan.<br><br>
 
-<!-- 💋 KISS DAY -->
-<div class="day" id="kiss">
-  <h1>💋 Kiss Day 💋</h1>
-  <p>
-    A soft kiss on your forehead…<br><br>
-    No rush.
-    No noise.
-    Just love and respect.
-  </p>
-  <button onclick="next('kiss','question')">Next ❤️</button>
-</div>
+    i love you so so so so so so so so so so so so much.<br><br>
 
-<!-- ❤️ QUESTION -->
-<div class="day" id="question">
-  <h1>❤️ My Question ❤️</h1>
-  <p>
-    I’ve walked every step with you…<br><br>
-    Will you be my Valentine? 💕
+    come here…<br>
+    let me steal you for a moment 😘
   </p>
-  <button onclick="yesLove()">Yes 💖</button>
-  <button onclick="yesLove()">Always Yes 😉</button>
+  <button onclick="moreLove()">don’t stop 🤍</button>
 </div>
 
 <script>
-function next(a, b) {
-  document.getElementById(a).classList.remove("active");
-  document.getElementById(b).classList.add("active");
-}
-
-function yesLove() {
-  document.getElementById("question").innerHTML = `
-    <h1>🤗 Forever Us 🤗</h1>
+function moreLove(){
+  document.getElementById("card").innerHTML = `
+    <h1>mmh… stay right here 🤍</h1>
     <p>
-      Come here…<br><br>
-      My arms around you,<br>
-      your heart close to mine.<br><br>
+      closer… even closer…<br><br>
 
-      <b>I love you endlessly, Tanya.</b><br><br>
+      feel my hands around you,<br>
+      slow… gentle… possessive in the sweetest way.<br><br>
 
-      Yeh vaada raha…<br>
-      now and forever ❤️
+      if loving you was a crime,<br>
+      i’d happily be guilty every single day.<br><br>
+
+      my baby.<br>
+      my baacha.<br>
+      my wifey.<br>
+      my jaan.<br><br>
+
+      i love you endlessly…<br>
+      obsessively…<br>
+      ridiculously…<br><br>
+
+      ummah 😘 ummah 😘 ummah 😘
     </p>
   `;
 }
 
-function toggleMusic() {
-  const music = document.getElementById("music");
-  if (music.paused) music.play();
-  else music.pause();
-}
-
 // floating hearts
-setInterval(() => {
-  const h = document.createElement("div");
-  h.className = "heart";
-  h.innerHTML = "❤️";
-  h.style.left = Math.random() * 100 + "vw";
-  h.style.fontSize = Math.random() * 20 + 15 + "px";
-  document.body.appendChild(h);
-  setTimeout(() => h.remove(), 8000);
-}, 400);
+setInterval(()=>{
+ const h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="💗";
+ h.style.left=Math.random()*100+"vw";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),14000);
+},700);
 </script>
 
 </body>
