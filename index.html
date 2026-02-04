@@ -2,195 +2,237 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Baby ❤️</title>
+<title>Tanya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-  margin:0;
-  height:100vh;
-  background:#000;
-  overflow:hidden;
-  font-family:'Segoe UI',sans-serif;
-}
+  * { box-sizing: border-box; }
 
-/* BACKGROUND LOVE WHISPERS */
-.bg{
-  position:fixed;
-  inset:0;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-content:center;
-  text-align:center;
-  color:rgba(255,105,180,0.07);
-  font-size:22px;
-  line-height:2;
-  pointer-events:none;
-  animation:move 90s linear infinite;
-}
-@keyframes move{
-  from{transform:translateY(0);}
-  to{transform:translateY(-60%);}
-}
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at top, #ffb6c1, #f6d365, #fda085);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Georgia", serif;
+  }
 
-/* MAIN LOVE CARD */
-.card{
-  position:relative;
-  z-index:2;
-  width:90%;
-  max-width:420px;
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(20px);
-  padding:38px;
-  border-radius:45px;
-  text-align:center;
-  box-shadow:0 50px 100px rgba(0,0,0,0.8);
-  animation:appear 3s ease;
-}
-@keyframes appear{
-  from{opacity:0;transform:scale(0.7);}
-  to{opacity:1;transform:scale(1);}
-}
+  .card {
+    width: 340px;
+    background: rgba(255,255,255,0.9);
+    padding: 35px;
+    border-radius: 26px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+  }
 
-h1{
-  color:#fff;
-  font-weight:500;
-  text-shadow:0 0 30px rgba(255,255,255,0.9);
-}
-p{
-  margin-top:18px;
-  color:#fff;
-  font-size:16px;
-  line-height:2.1;
-  text-shadow:0 0 15px rgba(0,0,0,0.7);
-}
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
 
-button{
-  margin-top:28px;
-  padding:16px 42px;
-  border:none;
-  border-radius:45px;
-  background:linear-gradient(135deg,#ff4f81,#ff9bb3);
-  color:white;
-  font-size:15px;
-  cursor:pointer;
-  box-shadow:0 18px 40px rgba(255,90,140,0.8);
-  transition:0.6s;
-}
-button:hover{transform:scale(1.15);}
+  img {
+    width: 190px;
+    margin-bottom: 20px;
+  }
 
-/* HEARTS */
-.heart{
-  position:absolute;
-  color:rgba(255,120,180,0.6);
-  font-size:20px;
-  animation:float 14s linear infinite;
-}
-@keyframes float{
-  0%{transform:translateY(120vh);opacity:0;}
-  30%{opacity:1;}
-  100%{transform:translateY(-20vh);opacity:0;}
-}
+  h2 {
+    font-weight: normal;
+    line-height: 1.45;
+    color: #333;
+    margin-bottom: 28px;
+  }
+
+  .buttons {
+    position: relative;
+    height: 70px;
+  }
+
+  button {
+    padding: 12px 34px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    transition: 0.2s ease;
+  }
+
+  #yes {
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+  }
+
+  #no {
+    right: 10px;
+    background: white;
+    color: #333;
+  }
+
+  .heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: rise 6s linear infinite;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  @keyframes rise {
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(-110vh) scale(1.6); }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 18px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.85);
+  }
 </style>
 </head>
 
 <body>
 
-<div class="bg">
-  i love you so much my baby my baacha my wifey my jaan •  
-  so so so so so so so so so so so much •  
-  ummah 😘 • i choose you every single day •  
-  my heart is yours • forever •  
+<audio id="music" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+</audio>
+
+<div class="card">
+  <img id="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+  <h2 id="text">
+    Tanya…<br>
+    ek chhota sa sawaal hai,<br>
+    jo dil se pooch raha hoon.
+  </h2>
+
+  <div class="buttons">
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
 </div>
 
-<div class="card" id="card">
-  <h1>🌹 Rose Day</h1>
-  <p>
-    My baby…<br><br>
-    I give you a rose not from my hand,
-    but from my heart.<br>
-    Soft. Real. Only yours.
-  </p>
-  <button onclick="next()">next 🤍</button>
+<div class="footer">
+  Some feelings are written… not spoken.
 </div>
 
 <script>
-const days = [
+const gif = document.getElementById("gif");
+const text = document.getElementById("text");
+const yesBtn = document.getElementById("yes");
+const noBtn = document.getElementById("no");
+const music = document.getElementById("music");
+
+const scenes = [
   {
-    title:"💍 Propose Day",
-    text:`I don’t ask loudly.<br><br>
-    I just come close and whisper —
-    my heart has chosen you,
-    again and again.`
+    text:
+    "Before you answer…<br>" +
+    "just stay here with me for a moment.",
+    gif: "https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif"
   },
   {
-    title:"🍫 Chocolate Day",
-    text:`You make life sweeter without trying.<br><br>
-    One thought of you
-    melts everything heavy inside me.`
+    text:
+    "I don’t fall in love loudly.<br>" +
+    "I fall in love slowly,<br>" +
+    "the way something real always does.",
+    gif: "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif"
   },
   {
-    title:"🧸 Teddy Day",
-    text:`Come here…<br><br>
-    Until I can really hold you,
-    let my love wrap around you
-    like a warm hug.`
+    text:
+    "When life feels heavy,<br>" +
+    "my mind doesn’t search for solutions.<br>" +
+    "It searches for you.",
+    gif: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
   },
   {
-    title:"🤞 Promise Day",
-    text:`Yeh vaada raha…<br><br>
-    I may not be perfect,
-    but my heart will always stay with you.`
+    text:
+    "You don’t interrupt my life.<br>" +
+    "You soften it.<br>" +
+    "Like warmth quietly entering a cold room.",
+    gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
   },
   {
-    title:"🤗 Hug Day",
-    text:`Stay still for a moment…<br><br>
-    Feel my arms around you,
-    holding you close,
-    like you belong right here.`
+    text:
+    "I flirt with you because my heart<br>" +
+    "forgets how to be serious<br>" +
+    "when you exist.",
+    gif: "https://media.giphy.com/media/f9EmXxglhdhAj1bo28/giphy.gif"
   },
   {
-    title:"💋 Kiss Day",
-    text:`A soft kiss…<br><br>
-    not rushed,
-    not loud,
-    just enough to say —
-    you are deeply loved.`
+    text:
+    "Loving you feels like sugar in tea.<br>" +
+    "You disappear into my life,<br>" +
+    "and suddenly… everything tastes better.",
+    gif: "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
   },
   {
-    title:"❤️ Valentine’s Day",
-    text:`After every feeling,
-    every promise,
-    every quiet moment…<br><br>
-    I choose you.<br><br>
-    My baby. My baacha. My wifey. My jaan.<br><br>
-    <b>I love you so so so so so so so so so much.</b><br><br>
-    Ummah 😘`
+    text:
+    "So if you’re wondering what you are to me…<br>" +
+    "You are calm.<br>" +
+    "You are home.<br>" +
+    "You are chosen.",
+    gif: "https://media.giphy.com/media/8FVcs24aSuQBpHPg4n/giphy.gif"
   }
 ];
 
-let i=0;
-function next(){
-  const c=document.getElementById("card");
-  if(i<days.length){
-    c.innerHTML=`
-      <h1>${days[i].title}</h1>
-      <p>${days[i].text}</p>
-      <button onclick="next()">next 🤍</button>
-    `;
-    i++;
-  }
+let step = 0;
+
+function moveNo() {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 140 - 70;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-// hearts
-setInterval(()=>{
-  const h=document.createElement("div");
-  h.className="heart";
-  h.innerHTML="💗";
-  h.style.left=Math.random()*100+"vw";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),14000);
-},700);
+noBtn.addEventListener("mouseover", moveNo);
+
+noBtn.addEventListener("click", () => {
+  music.play();
+  if (step < scenes.length) {
+    text.innerHTML = scenes[step].text;
+    gif.src = scenes[step].gif;
+    moveNo();
+    step++;
+  } else {
+    noBtn.style.display = "none";
+  }
+});
+
+yesBtn.addEventListener("click", () => {
+  music.play();
+  gif.src = "https://media.giphy.com/media/8FVcs24aSuQBpHPg4n/giphy.gif";
+  text.innerHTML =
+    "Tanya…<br>" +
+    "I don’t need promises.<br>" +
+    "I don’t need forever spoken aloud.<br><br>" +
+    "I just love that it’s you.<br>" +
+    "And somehow…<br>" +
+    "that has always been enough.";
+  noBtn.style.display = "none";
+  yesBtn.style.display = "none";
+  startHearts();
+});
+
+function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 4 + Math.random() * 3 + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 7000);
+  }, 280);
+}
 </script>
 
 </body>
