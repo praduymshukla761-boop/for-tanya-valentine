@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #ffb6c1, #f6d365, #fda085);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  width: 340px;
+  padding: 30px;
+  border-radius: 26px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+img {
+  width: 190px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333;
+}
+
+.buttons {
+  margin-top: 20px;
+  position: relative;
+  height: 60px;
+}
+
+button {
+  padding: 12px 32px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+}
+
+#yesBtn {
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+}
+
+#noBtn {
+  right: 10px;
+  background: white;
+}
+
+#cheatCounter {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Shake effect */
+.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+/* Lock screen */
+.lockScreen {
+  height: 100vh;
+  width: 100%;
+  background: #ffd6e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.lockScreen img {
+  width: 220px;
+}
+
+.lockScreen h1 {
+  margin: 15px 0 5px;
+}
