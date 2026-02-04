@@ -6,45 +6,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  * { box-sizing: border-box; }
-
   body {
     margin: 0;
     height: 100vh;
-    overflow: hidden;
-    background: radial-gradient(circle at top, #ffb6c1, #f6d365, #fda085);
+    background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     font-family: "Georgia", serif;
   }
 
-  .card {
-    width: 340px;
-    background: rgba(255,255,255,0.9);
-    padding: 35px;
-    border-radius: 26px;
+  .container {
+    width: 350px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 28px;
+    padding: 36px;
     text-align: center;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
     position: relative;
-    z-index: 2;
-  }
-
-  @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
   }
 
   img {
-    width: 190px;
-    margin-bottom: 20px;
+    width: 200px;
+    border-radius: 16px;
+    margin-bottom: 22px;
   }
 
   h2 {
     font-weight: normal;
-    line-height: 1.45;
-    color: #333;
+    line-height: 1.55;
+    color: #2f2f2f;
     margin-bottom: 28px;
   }
 
@@ -54,50 +46,46 @@
   }
 
   button {
-    padding: 12px 34px;
-    border-radius: 30px;
+    padding: 12px 36px;
+    border-radius: 40px;
     border: none;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     position: absolute;
-    transition: 0.2s ease;
+    transition: 0.25s ease;
   }
 
   #yes {
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    color: white;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
-    color: white;
   }
 
   #no {
-    right: 10px;
-    background: white;
-    color: #333;
+    background: transparent;
+    color: #555;
+    right: 8px;
   }
 
-  .heart {
+  .sparkle {
     position: fixed;
-    bottom: -20px;
-    font-size: 20px;
-    animation: rise 6s linear infinite;
+    top: -10px;
+    font-size: 14px;
+    animation: fall 6s linear infinite;
     opacity: 0.6;
-    z-index: 1;
   }
 
-  @keyframes rise {
-    from { transform: translateY(0) scale(1); }
-    to { transform: translateY(-110vh) scale(1.6); }
+  @keyframes fall {
+    from { transform: translateY(0); }
+    to { transform: translateY(110vh); }
   }
 
-  .footer {
-    position: fixed;
-    bottom: 18px;
-    width: 100%;
-    text-align: center;
-    font-size: 13px;
+  .note {
+    margin-top: 22px;
+    font-size: 12px;
+    color: #888;
     letter-spacing: 1px;
-    color: rgba(255,255,255,0.85);
   }
 </style>
 </head>
@@ -105,103 +93,87 @@
 <body>
 
 <audio id="music" loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">
 </audio>
 
-<div class="card">
-  <img id="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+<div class="container">
+  <img id="gif" src="https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif">
   <h2 id="text">
     Tanya…<br>
-    ek chhota sa sawaal hai,<br>
-    jo dil se pooch raha hoon.
+    this isn’t a question.<br>
+    It’s a moment.
   </h2>
 
   <div class="buttons">
-    <button id="yes">Yes</button>
-    <button id="no">No</button>
+    <button id="yes">Stay</button>
+    <button id="no">Leave</button>
+  </div>
+
+  <div class="note">
+    Take your time. I’m not going anywhere.
   </div>
 </div>
 
-<div class="footer">
-  Some feelings are written… not spoken.
-</div>
-
 <script>
-const gif = document.getElementById("gif");
 const text = document.getElementById("text");
+const gif = document.getElementById("gif");
 const yesBtn = document.getElementById("yes");
 const noBtn = document.getElementById("no");
 const music = document.getElementById("music");
 
-const scenes = [
+const flow = [
   {
     text:
-    "Before you answer…<br>" +
-    "just stay here with me for a moment.",
+    "I tease you sometimes…<br>" +
+    "but only because you make my heart feel playful.",
+    gif: "https://media.giphy.com/media/l4FGpPki5v2Bcd6Ss/giphy.gif"
+  },
+  {
+    text:
+    "You don’t demand attention.<br>" +
+    "You receive it — effortlessly.",
+    gif: "https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif"
+  },
+  {
+    text:
+    "Some people are exciting.<br>" +
+    "Some are comforting.<br>" +
+    "You are both.",
+    gif: "https://media.giphy.com/media/3ohs7KViF6rA4aan5u/giphy.gif"
+  },
+  {
+    text:
+    "If I flirt…<br>" +
+    "it’s because you already feel like mine,<br>" +
+    "without needing to be claimed.",
+    gif: "https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif"
+  },
+  {
+    text:
+    "You don’t stay in my thoughts loudly.<br>" +
+    "You stay there gently.<br>" +
+    "And that’s more dangerous.",
     gif: "https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif"
-  },
-  {
-    text:
-    "I don’t fall in love loudly.<br>" +
-    "I fall in love slowly,<br>" +
-    "the way something real always does.",
-    gif: "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif"
-  },
-  {
-    text:
-    "When life feels heavy,<br>" +
-    "my mind doesn’t search for solutions.<br>" +
-    "It searches for you.",
-    gif: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
-  },
-  {
-    text:
-    "You don’t interrupt my life.<br>" +
-    "You soften it.<br>" +
-    "Like warmth quietly entering a cold room.",
-    gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
-  },
-  {
-    text:
-    "I flirt with you because my heart<br>" +
-    "forgets how to be serious<br>" +
-    "when you exist.",
-    gif: "https://media.giphy.com/media/f9EmXxglhdhAj1bo28/giphy.gif"
-  },
-  {
-    text:
-    "Loving you feels like sugar in tea.<br>" +
-    "You disappear into my life,<br>" +
-    "and suddenly… everything tastes better.",
-    gif: "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
-  },
-  {
-    text:
-    "So if you’re wondering what you are to me…<br>" +
-    "You are calm.<br>" +
-    "You are home.<br>" +
-    "You are chosen.",
-    gif: "https://media.giphy.com/media/8FVcs24aSuQBpHPg4n/giphy.gif"
   }
 ];
 
-let step = 0;
+let index = 0;
 
-function moveNo() {
-  const x = Math.random() * 200 - 100;
-  const y = Math.random() * 140 - 70;
+function driftNo() {
+  const x = Math.random() * 160 - 80;
+  const y = Math.random() * 120 - 60;
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("mouseover", driftNo);
 
 noBtn.addEventListener("click", () => {
   music.play();
-  if (step < scenes.length) {
-    text.innerHTML = scenes[step].text;
-    gif.src = scenes[step].gif;
-    moveNo();
-    step++;
+  if (index < flow.length) {
+    text.innerHTML = flow[index].text;
+    gif.src = flow[index].gif;
+    driftNo();
+    index++;
   } else {
     noBtn.style.display = "none";
   }
@@ -211,27 +183,26 @@ yesBtn.addEventListener("click", () => {
   music.play();
   gif.src = "https://media.giphy.com/media/8FVcs24aSuQBpHPg4n/giphy.gif";
   text.innerHTML =
-    "Tanya…<br>" +
-    "I don’t need promises.<br>" +
-    "I don’t need forever spoken aloud.<br><br>" +
-    "I just love that it’s you.<br>" +
-    "And somehow…<br>" +
-    "that has always been enough.";
+    "Good.<br>" +
+    "Because I wasn’t trying to keep you.<br>" +
+    "I was just being myself…<br><br>" +
+    "And somehow,<br>" +
+    "you stayed.";
   noBtn.style.display = "none";
   yesBtn.style.display = "none";
-  startHearts();
+  startSparkles();
 });
 
-function startHearts() {
+function startSparkles() {
   setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerText = "❤";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = 4 + Math.random() * 3 + "s";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 7000);
-  }, 280);
+    const s = document.createElement("div");
+    s.className = "sparkle";
+    s.innerText = "✦";
+    s.style.left = Math.random() * 100 + "vw";
+    s.style.animationDuration = 4 + Math.random() * 3 + "s";
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 7000);
+  }, 260);
 }
 </script>
 
