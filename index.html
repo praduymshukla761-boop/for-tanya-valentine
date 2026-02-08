@@ -2,215 +2,207 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tanya</title>
+<title>My Forever With You</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  body {
-    margin: 0;
-    height: 100vh;
-    background: radial-gradient(circle at top, #2b1055, #000000);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    font-family: "Georgia", serif;
-  }
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#fde2e4,#fadadd);
+  color:#3a3a3a;
+}
+.screen{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  animation:fade 1s ease;
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
 
-  .card {
-    width: 360px;
-    background: rgba(255,255,255,0.92);
-    border-radius: 28px;
-    padding: 38px;
-    text-align: center;
-    box-shadow: 0 35px 70px rgba(0,0,0,0.45);
-    animation: float 3.5s ease-in-out infinite;
-  }
+.card{
+  background:#fff;
+  max-width:430px;
+  width:100%;
+  padding:26px;
+  border-radius:24px;
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+}
 
-  @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
+h1,h2{
+  text-align:center;
+  color:#be123c;
+}
 
-  img {
-    width: 210px;
-    border-radius: 18px;
-    margin-bottom: 22px;
-  }
+p{
+  line-height:1.75;
+  font-size:15px;
+}
 
-  h2 {
-    font-weight: normal;
-    line-height: 1.65;
-    color: #1f1f1f;
-    margin-bottom: 30px;
-  }
+input,button{
+  width:100%;
+  padding:13px;
+  margin-top:12px;
+  border-radius:14px;
+  border:1px solid #fda4af;
+  font-size:15px;
+}
 
-  .buttons {
-    position: relative;
-    height: 75px;
-  }
+button{
+  background:#e11d48;
+  color:#fff;
+  border:none;
+  font-weight:600;
+}
 
-  button {
-    padding: 12px 40px;
-    border-radius: 40px;
-    border: none;
-    font-size: 15px;
-    cursor: pointer;
-    position: absolute;
-    transition: 0.25s ease;
-  }
+.section{margin-top:28px}
 
-  #yes {
-    background: linear-gradient(45deg, #ff5f9e, #ff8fab);
-    color: white;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.box{
+  background:#fff1f2;
+  padding:14px;
+  border-radius:16px;
+  margin-top:12px;
+  font-size:14px;
+  animation:slideUp .6s ease;
+}
+@keyframes slideUp{
+  from{transform:translateY(15px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
 
-  #no {
-    background: transparent;
-    color: #777;
-    right: 8px;
-  }
+footer{
+  margin-top:30px;
+  text-align:center;
+  font-size:13px;
+  color:#7f1d1d;
+}
 
-  .heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 16px;
-    animation: rise 7s linear infinite;
-    opacity: 0.5;
-  }
-
-  @keyframes rise {
-    from { transform: translateY(0) scale(1); }
-    to { transform: translateY(-115vh) scale(1.8); }
-  }
-
-  .whisper {
-    margin-top: 22px;
-    font-size: 12px;
-    color: #aaa;
-    letter-spacing: 1px;
-  }
+.hidden{display:none}
+.center{text-align:center}
+.small{font-size:13px;color:#555}
 </style>
 </head>
 
 <body>
 
-<audio id="music" loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3">
+<!-- MUSIC -->
+<audio id="bgm" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 </audio>
 
-<div class="card">
-  <img id="gif" src="https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif">
-  <h2 id="text">
-    Tanya…<br>
-    it’s late.<br>
-    Which is usually when I think of you<br>
-    a little more honestly.
-  </h2>
-
-  <div class="buttons">
-    <button id="yes">Stay</button>
-    <button id="no">Escape</button>
-  </div>
-
-  <div class="whisper">
-    Lower your guard. I already have.
+<!-- LOCK SCREEN -->
+<div class="screen" id="lock">
+  <div class="card center">
+    <h1>🔐 Only For You</h1>
+    <p>Enter the date where everything began</p>
+    <input type="password" id="pass" placeholder="DDMMYYYY">
+    <button onclick="unlock()">Open My Heart ❤️</button>
+    <p class="small">Hint: the day we met</p>
   </div>
 </div>
 
+<!-- MAIN CONTENT -->
+<div class="screen hidden" id="content">
+<div class="card">
+
+<h1>My Forever 💍</h1>
+
+<p class="center">
+You are not just my girlfriend.  
+You are my **wifey**, my future, my peace.  
+This is not a moment — this is intention.
+</p>
+
+<!-- LETTER -->
+<div class="section">
+<h2>💌 From My Heart</h2>
+<p>
+Somewhere between meeting you and missing you,  
+you became permanent in my life.  
+I don’t want temporary love — I want a life with you.  
+Growing, learning, standing together… always.
+</p>
+</div>
+
+<!-- TIMELINE -->
+<div class="section">
+<h2>📖 Our Story</h2>
+
+<div class="box"><b>18 Aug 2024</b><br>The day everything began.</div>
+<div class="box"><b>25 Aug 2024</b><br>You became my favorite feeling.</div>
+<div class="box"><b>10 Sep 2024</b><br>Missing you felt natural.</div>
+<div class="box"><b>30 Oct 2024</b><br>Your first voice note — unforgettable.</div>
+<div class="box"><b>01 Jan 2025</b><br>The day I chose you out loud.</div>
+<div class="box"><b>20 Jun 2025</b><br>The world was blessed with you.</div>
+<div class="box"><b>19 Aug 2025</b><br>Your first call — my heart melted.</div>
+
+</div>
+
+<!-- WHY I LOVE YOU -->
+<div class="section">
+<h2>💖 Why I Love You</h2>
+
+<div class="box">With you, love feels calm and safe.</div>
+<div class="box">You make me want to be better, not perfect.</div>
+<div class="box">My future only makes sense with you.</div>
+<div class="box">Your voice changes my entire day.</div>
+<div class="box">You feel like home.</div>
+
+</div>
+
+<!-- FUTURE -->
+<div class="section">
+<h2>🌱 Our Future</h2>
+
+<div class="box">Holding your hand and calling it home.</div>
+<div class="box">Late nights turning into everyday life.</div>
+<div class="box">Growing through everything — together.</div>
+<div class="box">A peaceful, honest life.</div>
+<div class="box">One day smiling and knowing — we chose right.</div>
+
+</div>
+
+<!-- SPECIAL DAYS -->
+<div class="section">
+<h2>🌹 Not Just One Day</h2>
+<p>
+I may miss Rose Day or Propose Day,  
+but I never miss choosing you.  
+My love doesn’t wait for dates —  
+it lives in everyday moments with you.
+</p>
+</div>
+
+<!-- FINAL PROMISE -->
+<div class="section">
+<h2>♾️ My Promise</h2>
+<p>
+If love asks me for one name,  
+one future, one forever —  
+it will always be **you**.
+</p>
+</div>
+
+<footer>
+Made with love. Chosen with intention. ❤️
+</footer>
+
+</div>
+</div>
+
 <script>
-const gif = document.getElementById("gif");
-const text = document.getElementById("text");
-const yesBtn = document.getElementById("yes");
-const noBtn = document.getElementById("no");
-const music = document.getElementById("music");
-
-const moments = [
-  {
-    text:
-    "You know what’s unfair?<br>" +
-    "You acting innocent…<br>" +
-    "while knowing exactly how close you feel.",
-    gif: "https://media.giphy.com/media/3ohs7KViF6rA4aan5u/giphy.gif"
-  },
-  {
-    text:
-    "I tease you softly,<br>" +
-    "because I like the way you smile<br>" +
-    "when you pretend not to.",
-    gif: "https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif"
-  },
-  {
-    text:
-    "You don’t rush into my thoughts.<br>" +
-    "You arrive slowly…<br>" +
-    "and suddenly, you’re everywhere.",
-    gif: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
-  },
-  {
-    text:
-    "I like you in that quiet way.<br>" +
-    "The kind that doesn’t ask permission.<br>" +
-    "It just stays.",
-    gif: "https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
-  },
-  {
-    text:
-    "If this feels a little dangerous…<br>" +
-    "good.<br>" +
-    "So does falling asleep smiling.",
-    gif: "https://media.giphy.com/media/f9EmXxglhdhAj1bo28/giphy.gif"
+function unlock(){
+  const p=document.getElementById("pass").value;
+  if(p==="18082024"){
+    document.getElementById("lock").classList.add("hidden");
+    document.getElementById("content").classList.remove("hidden");
+    document.getElementById("bgm").play();
+  }else{
+    alert("Wrong date ❤️");
   }
-];
-
-let step = 0;
-
-function dodgeNo() {
-  const x = Math.random() * 170 - 85;
-  const y = Math.random() * 120 - 60;
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
-}
-
-noBtn.addEventListener("mouseover", dodgeNo);
-
-noBtn.addEventListener("click", () => {
-  music.play();
-  if (step < moments.length) {
-    text.innerHTML = moments[step].text;
-    gif.src = moments[step].gif;
-    dodgeNo();
-    step++;
-  } else {
-    noBtn.style.display = "none";
-  }
-});
-
-yesBtn.addEventListener("click", () => {
-  music.play();
-  gif.src = "https://media.giphy.com/media/8FVcs24aSuQBpHPg4n/giphy.gif";
-  text.innerHTML =
-    "Good.<br>" +
-    "I wasn’t asking you to stay forever.<br><br>" +
-    "Just long enough<br>" +
-    "for this moment to feel real.<br><br>" +
-    "And it does.";
-  noBtn.style.display = "none";
-  yesBtn.style.display = "none";
-  startHearts();
-});
-
-function startHearts() {
-  setInterval(() => {
-    const h = document.createElement("div");
-    h.className = "heart";
-    h.innerText = "❤";
-    h.style.left = Math.random() * 100 + "vw";
-    h.style.animationDuration = 5 + Math.random() * 3 + "s";
-    document.body.appendChild(h);
-    setTimeout(() => h.remove(), 8000);
-  }, 300);
 }
 </script>
 
