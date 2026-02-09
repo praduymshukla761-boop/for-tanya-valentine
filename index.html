@@ -2,233 +2,202 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Forever With You</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Chocolate Day for Tanya ❤️</title>
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#fde2e4,#fadadd);
-  color:#3a3a3a;
-}
-.screen{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-.card{
-  background:#fff;
-  max-width:430px;
-  width:100%;
-  padding:26px;
-  border-radius:24px;
-  box-shadow:0 18px 45px rgba(0,0,0,.18);
-}
-h1,h2{
-  text-align:center;
-  color:#be123c;
-}
-p{
-  line-height:1.75;
-  font-size:15px;
-}
-input,button{
-  width:100%;
-  padding:13px;
-  margin-top:12px;
-  border-radius:14px;
-  border:1px solid #fda4af;
-  font-size:15px;
-}
-button{
-  background:#e11d48;
-  color:#fff;
-  border:none;
-  font-weight:600;
-}
-.section{margin-top:28px}
-.box{
-  background:#fff1f2;
-  padding:14px;
-  border-radius:16px;
-  margin-top:12px;
-  font-size:14px;
-}
-img{
-  width:100%;
-  border-radius:18px;
-  margin:12px 0;
-}
-footer{
-  margin-top:30px;
-  text-align:center;
-  font-size:13px;
-  color:#7f1d1d;
-}
-.hidden{display:none}
-.center{text-align:center}
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: 'Segoe UI', sans-serif;
+        background: #1e0f0f;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    /* LOVE BACKGROUND */
+    body::before {
+        content: "I love you Tanya I love you Tanya I love you Tanya I love you Tanya I love you Tanya";
+        position: absolute;
+        width: 300%;
+        height: 300%;
+        font-size: 42px;
+        color: rgba(255, 182, 193, 0.07);
+        transform: rotate(-25deg);
+        line-height: 1.6;
+        animation: moveBg 30s linear infinite;
+    }
+
+    @keyframes moveBg {
+        from { transform: translateX(0) rotate(-25deg); }
+        to { transform: translateX(-60%) rotate(-25deg); }
+    }
+
+    .card {
+        position: relative;
+        z-index: 2;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(14px);
+        padding: 35px;
+        border-radius: 28px;
+        width: 430px;
+        text-align: center;
+        box-shadow: 0 0 40px rgba(0,0,0,0.45);
+        animation: fadeIn 2s ease;
+    }
+
+    h1 {
+        color: #ffb3c6;
+        font-size: 2.5rem;
+        margin-bottom: 8px;
+    }
+
+    .emoji {
+        font-size: 3.2rem;
+        animation: bounce 1.6s infinite;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.65;
+        margin: 16px 0;
+    }
+
+    .btn {
+        background: #ff6f91;
+        border: none;
+        padding: 14px 32px;
+        border-radius: 35px;
+        font-size: 1.05rem;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 10px;
+    }
+
+    .btn:hover {
+        background: #ff4d6d;
+        transform: scale(1.1);
+    }
+
+    .hidden {
+        display: none;
+        margin-top: 18px;
+        color: #ffe5ec;
+        font-size: 1.05rem;
+    }
+
+    /* Chocolate feeding */
+    .feed {
+        font-size: 2.8rem;
+        margin-top: 15px;
+        animation: feed 2s infinite;
+    }
+
+    @keyframes feed {
+        0% { transform: translateX(-20px); }
+        50% { transform: translateX(20px); }
+        100% { transform: translateX(-20px); }
+    }
+
+    /* Kiss Hug */
+    .actions {
+        font-size: 2.5rem;
+        margin-top: 12px;
+        animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+        0%,100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: absolute;
+        font-size: 20px;
+        color: pink;
+        animation: float 6s linear infinite;
+        opacity: 0.75;
+    }
+
+    @keyframes float {
+        from { transform: translateY(100vh); }
+        to { transform: translateY(-10vh); }
+    }
+
+    @keyframes bounce {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-14px); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
 </style>
 </head>
-
 <body>
 
-<!-- MUSIC -->
-<audio id="bgm" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/05/18/audio_3a1d8c7a7a.mp3?filename=love-piano-ambient-110624.mp3" type="audio/mpeg">
-</audio>
-
-<!-- LOCK SCREEN -->
-<div class="screen" id="lock">
-  <div class="card center">
-    <h1>🔐 Only For You</h1>
-    <p>Enter the day everything began</p>
-    <input type="password" id="pass" placeholder="DDMMYYYY">
-    <button onclick="unlock()">Open My Heart ❤️</button>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="screen hidden" id="content">
 <div class="card">
+    <div class="emoji">🍫</div>
+    <h1>Happy Chocolate Day, Tanya ❤️</h1>
 
-<h1>My Forever 💍</h1>
+    <p>
+        Baby… suno na 😌  
+        aaj chocolate day hai,  
+        par sach bolun?  
+        **tum ho meri favourite chocolate** 🍫💕
+    </p>
 
-<!-- LOVE LETTER -->
-<div class="section">
-<h2>💌 From My Heart</h2>
+    <p>
+        Meetha bhi tum, soft bhi tum,  
+        aur jab paas hoti ho na…  
+        main bilkul pighal jaata hoon 🫠❤️
+    </p>
 
-<img src="https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif">
+    <button class="btn" onclick="showLove()">Baby, open your mouth 😋</button>
 
-<p>
-My wifey,<br><br>
+    <div id="love" class="hidden">
+        <p>
+            Tanya… imagine this 💭  
+            main chocolate todta hoon 🍫  
+            apne haath se tumhare lips tak laata hoon 🤲  
+            tum thoda sa sharma ke bite leti ho 😋  
+            aur usi second…  
+            main tumhe kiss kar leta hoon 💋  
+            phir tightly hug 🫂  
+            kyunki **meri jaan, tum meri sabse sweet habit ho** ❤️
+        </p>
 
-I don’t see you as someone I’m with for now.  
-I see you as someone I’m choosing for life.<br><br>
+        <div class="feed">🤲🍫😋</div>
+        <div class="actions">💋🫂💞</div>
 
-Somewhere along this journey, you stopped being just a part of my days —  
-you became part of my future.<br><br>
-
-I don’t want a love that only looks good on special days.  
-I want a love that survives silence, distance, misunderstandings, and time.<br><br>
-
-I want to wake up choosing you.  
-I want to build with you.  
-I want to stand beside you when life is easy — and especially when it isn’t.<br><br>
-
-You are not just my girlfriend.  
-You are my partner, my peace, my home.  
-The woman I want to marry.<br><br>
-
-If forever ever asks me who I belong to —  
-the answer will always be you.<br><br>
-
-Yours,<br>
-Always. 🤍
-</p>
-</div>
-
-<!-- TIMELINE -->
-<div class="section">
-<h2>📖 Our Story</h2>
-
-<img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif">
-
-<div class="box"><b>18 Aug 2024 💓</b><br>The Day Everything Began</div>
-<div class="box"><b>10 Sep 2024 💞</b><br>When Missing You Felt Natural</div>
-<div class="box"><b>30 Oct 2024 🎧💗</b><br>The Day Your Voice Stayed With Me</div>
-<div class="box"><b>01 Jan 2025 💘</b><br>The Day I Chose You Out Loud</div>
-<div class="box"><b>20 Jun 2025 🎂💞</b><br>The Day I Celebrated You</div>
-<div class="box"><b>19 Aug 2025 📞💓</b><br>The Day I Heard You Say My Name</div>
-<div class="box"><b>Today ♾️💖</b><br>Still Choosing You</div>
-</div>
-
-<!-- WHY I LOVE YOU -->
-<div class="section">
-<h2>💖 Why I Love You</h2>
-
-<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
-
-<div class="box">Because with you, love feels calm, safe, and like home.</div>
-<div class="box">Because you make me want to be better, not perfect.</div>
-<div class="box">Because my future only makes sense when I see you in it.</div>
-<div class="box">Because your voice can calm my worst days.</div>
-<div class="box">Because even apart, you never feel far.</div>
-<div class="box">Because loving you feels natural.</div>
-<div class="box">Because you make ordinary moments special.</div>
-<div class="box">Because I trust you with my future.</div>
-<div class="box">Because growing old feels exciting with you.</div>
-<div class="box">Because you feel like my forever.</div>
-</div>
-
-<!-- FUTURE -->
-<div class="section">
-<h2>🌱 Future Bucket List</h2>
-
-<img src="https://media.giphy.com/media/26xBsXOrv5w8uG7Go/giphy.gif">
-
-<div class="box">Hold your hand and feel peace.</div>
-<div class="box">Late nights into mornings.</div>
-<div class="box">Grow, fail, heal together.</div>
-<div class="box">Celebrate every version of you.</div>
-<div class="box">Build a safe, honest home.</div>
-<div class="box">Smile knowing we chose right.</div>
-</div>
-
-<!-- DIFFERENT LOVE -->
-<div class="section">
-<h2>🌹 A Different Kind of Love</h2>
-
-<img src="https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif">
-
-<p>
-I may miss special days on the calendar,  
-but I never miss choosing you.  
-My love doesn’t wait for dates —  
-it lives in everyday moments with you. 🌹💓
-</p>
-</div>
-
-<!-- SECRET -->
-<div class="section">
-<h2>🤍 Secret</h2>
-
-<img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif">
-
-<p>
-If loving you is a lifetime commitment —  
-then consider this my forever “yes.”
-</p>
-</div>
-
-<footer>
-Made with love. Chosen forever. ❤️
-</footer>
-
-</div>
+        <p>
+            Chocolate khatam ho sakti hai baby…  
+            par **mera pyaar kabhi nahi**.  
+            Sirf tumhari taraf aata rahega.  
+            Ummah 😘❤️
+        </p>
+    </div>
 </div>
 
 <script>
-function unlock(){
-  if(document.getElementById("pass").value==="18082024"){
-    document.getElementById("lock").classList.add("hidden");
-    document.getElementById("content").classList.remove("hidden");
-
-    const music=document.getElementById("bgm");
-    music.volume=0;
-    music.play();
-    let v=0;
-    let fade=setInterval(()=>{
-      if(v<0.4){v+=0.02;music.volume=v;}
-      else clearInterval(fade);
-    },200);
-  }else{
-    alert("Wrong date ❤️");
-  }
+function showLove() {
+    document.getElementById("love").style.display = "block";
 }
+
+// Floating hearts
+setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤️";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.animationDuration = (4 + Math.random() * 3) + "s";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+}, 350);
 </script>
 
 </body>
