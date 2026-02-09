@@ -1,196 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Tanya ❤️ Everything Love</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Sweetest 🍫</title>
+    <style>
+        :root {
+            --primary: #6d4c41;
+            --accent: #ff4081;
+            --bg: #fff5f7;
+        }
 
-<style>
-body{
-    margin:0;
-    height:100vh;
-    font-family:'Segoe UI',sans-serif;
-    background:#0b0505;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-}
+        body {
+            background-color: var(--bg);
+            font-family: 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-/* BACKGROUND LOVE CHAOS */
-body::before{
-    content:"I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️";
-    position:absolute;
-    width:400%;
-    height:400%;
-    font-size:44px;
-    color:rgba(255,182,193,0.05);
-    transform:rotate(-25deg);
-    line-height:1.7;
-    animation:bgMove 22s linear infinite;
-}
-@keyframes bgMove{
-    to{transform:translateX(-60%) rotate(-25deg);}
-}
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 64, 129, 0.1);
+            text-align: center;
+            max-width: 450px;
+            width: 85%;
+            transition: all 0.5s ease;
+        }
 
-.card{
-    z-index:2;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(20px);
-    padding:30px;
-    width:500px;
-    border-radius:32px;
-    text-align:center;
-    box-shadow:0 0 60px rgba(0,0,0,0.75);
-    animation:fadeIn 1.5s ease;
-}
+        .hidden { display: none; }
 
-h1{
-    color:#ffb3c6;
-    font-size:2.6rem;
-}
+        h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 10px; }
+        p { color: #8d6e63; font-size: 1.1rem; line-height: 1.5; }
 
-p{
-    font-size:1.1rem;
-    line-height:1.7;
-    margin:14px 0;
-}
+        .main-img {
+            width: 120px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+            animation: heartbeat 1.5s infinite;
+        }
 
-.gif{
-    width:100%;
-    max-width:280px;
-    border-radius:20px;
-    margin:12px auto;
-    display:block;
-}
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
 
-.question{
-    font-size:1.3rem;
-    margin:20px 0;
-}
+        .btn-group {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
 
-.btn{
-    background:#ff6f91;
-    border:none;
-    padding:14px 36px;
-    border-radius:40px;
-    font-size:1.05rem;
-    color:white;
-    cursor:pointer;
-    margin:8px;
-    transition:.3s;
-}
-.btn:hover{
-    background:#ff4d6d;
-    transform:scale(1.15);
-}
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.hidden{display:none;}
+        #yesBtn { background: var(--accent); color: white; box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4); }
+        #noBtn { background: #eee; color: #999; position: absolute; left: 60%; }
 
-.end{
-    font-size:1.15rem;
-    color:#ffe5ec;
-    margin-top:18px;
-}
+        .letter-text {
+            text-align: left;
+            font-style: italic;
+            background: #fffdf9;
+            padding: 20px;
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
 
-@keyframes fadeIn{
-    from{opacity:0;transform:scale(.85);}
-    to{opacity:1;transform:scale(1);}
-}
-</style>
+        /* Chocolate Falling Animation */
+        .piece {
+            position: fixed;
+            top: -50px;
+            z-index: 100;
+            user-select: none;
+            pointer-events: none;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="card">
-    <h1>Tanya 🍫❤️</h1>
+    <div class="container" id="box">
+        <div id="step1">
+            <img src="https://cdn-icons-png.flaticon.com/512/3480/3480741.png" class="main-img">
+            <h1>Happy Chocolate Day!</h1>
+            <p>They say chocolate is the language of love, but even the finest Swiss cocoa isn't as sweet as you.</p>
+            <p><b>Will you let me sweeten your life forever?</b></p>
+            
+            <div class="btn-group">
+                <button id="yesBtn" onclick="nextStep()">YES!</button>
+                <button id="noBtn" onmouseover="moveNo()">NO</button>
+            </div>
+        </div>
 
-    <!-- CUTE GIF -->
-    <img class="gif" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
-
-    <p>
-        Baby… this page is chaos 😌  
-        Just like my feelings for you.  
-        Soft, crazy, sweet, intense — **everything** ❤️
-    </p>
-
-    <!-- FLIRTY GIF -->
-    <img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
-
-    <div id="question" class="question">
-        Do you like it when I pull you close just to look at you? 😏❤️
+        <div id="step2" class="hidden">
+            <img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png" class="main-img">
+            <h1>My Sweet Valentine... 🍫</h1>
+            <div class="letter-text" id="letter">
+                "Just like a box of chocolates, life with you is full of beautiful surprises. You are my dark chocolate (intense and deep), my milk chocolate (gentle and sweet), and my white chocolate (pure and bright). Thank you for being mine."
+            </div>
+            <p><i>I love you more than chocolate!</i></p>
+        </div>
     </div>
 
-    <button class="btn" onclick="next()">YES 💕</button>
-    <button class="btn" onclick="next()">DEFINITELY YES 😘</button>
+    <script>
+        function moveNo() {
+            const btn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
 
-    <div id="end" class="end hidden">
+        function nextStep() {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+            document.getElementById('letter').style.display = 'block';
+            
+            // Start the chocolate rain
+            setInterval(createChocolate, 200);
+        }
 
-        <!-- CHOCOLATE FEED -->
-        <img class="gif" src="https://media.giphy.com/media/3oz8xG5C6VCdH7ePtu/giphy.gif">
-
-        <p>
-            I knew it.  
-            You always choose closeness with me 😌🍫
-        </p>
-
-        <!-- KISS -->
-        <img class="gif" src="https://media.giphy.com/media/bGm9FuBCGg4SY/giphy.gif">
-
-        <p>
-            This is where I kiss you —  
-            not fast, not loud,  
-            just enough to make you smile 💋
-        </p>
-
-        <!-- HUG -->
-        <img class="gif" src="https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif">
-
-        <p>
-            And then I hug you like this 🫂  
-            tight… calm… safe.
-        </p>
-
-        <!-- HEART EXPLOSION -->
-        <img class="gif" src="https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif">
-
-        <p>
-            Tanya…  
-            I don’t want perfect moments.  
-            I want **you** in all moments.  
-            Laughing, quiet, messy, sleepy —  
-            always mine, always chosen ❤️  
-            <br><br>
-            <strong>Come here. I’ve got you.</strong>
-        </p>
-    </div>
-</div>
-
-<script>
-const questions = [
- "Do you like slow hugs more than loud words? 🫂",
- "Do you feel safe when I say ‘I’m here’? ❤️",
- "Do you imagine resting your head on my chest? 🤍",
- "Do you like when I tease you and then protect you? 😏",
- "Do you want kisses that feel like comfort? 💋",
- "Do you want me — fully, softly, always? ❤️"
-];
-
-let i = 0;
-
-function next(){
-    const q = document.getElementById("question");
-    const end = document.getElementById("end");
-
-    if(i < questions.length){
-        q.innerHTML = questions[i];
-        i++;
-    } else {
-        q.style.display = "none";
-        end.classList.remove("hidden");
-    }
-}
-</script>
-
+        function createChocolate() {
+            const items = ['🍫', '❤️', '🍬', '✨', '💖'];
+            const piece = document.createElement('div');
+            piece.className = 'piece';
+            piece.innerText = items[Math.floor(Math.random() * items.length)];
+            piece.style.left = Math.random() * 100 + 'vw';
+            piece.style.fontSize = Math.random() * 20 + 20 + 'px';
+            piece.style.animationDuration = Math.random() * 2 + 2 + 's';
+            document.body.appendChild(piece);
+            
+            setTimeout(() => piece.remove(), 3000);
+        }
+    </script>
 </body>
 </html>
