@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tanya ❤️ Chocolate Day</title>
+<title>Tanya ❤️ Everything Love</title>
 
 <style>
 body{
     margin:0;
     height:100vh;
     font-family:'Segoe UI',sans-serif;
-    background:#0f0505;
+    background:#0b0505;
     overflow:hidden;
     display:flex;
     justify-content:center;
@@ -17,17 +17,17 @@ body{
     color:#fff;
 }
 
-/* Background love text */
+/* BACKGROUND LOVE CHAOS */
 body::before{
-    content:"I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️";
+    content:"I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️";
     position:absolute;
-    width:300%;
-    height:300%;
-    font-size:42px;
-    color:rgba(255,182,193,0.06);
+    width:400%;
+    height:400%;
+    font-size:44px;
+    color:rgba(255,182,193,0.05);
     transform:rotate(-25deg);
-    line-height:1.6;
-    animation:bgMove 25s linear infinite;
+    line-height:1.7;
+    animation:bgMove 22s linear infinite;
 }
 @keyframes bgMove{
     to{transform:translateX(-60%) rotate(-25deg);}
@@ -35,39 +35,46 @@ body::before{
 
 .card{
     z-index:2;
-    background:rgba(255,255,255,0.14);
-    backdrop-filter:blur(18px);
-    padding:32px;
-    width:480px;
-    border-radius:30px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(20px);
+    padding:30px;
+    width:500px;
+    border-radius:32px;
     text-align:center;
-    box-shadow:0 0 50px rgba(0,0,0,0.7);
-    animation:fadeIn 1.8s ease;
+    box-shadow:0 0 60px rgba(0,0,0,0.75);
+    animation:fadeIn 1.5s ease;
 }
 
 h1{
     color:#ffb3c6;
-    font-size:2.5rem;
-    margin-bottom:10px;
+    font-size:2.6rem;
 }
 
 p{
     font-size:1.1rem;
-    line-height:1.65;
+    line-height:1.7;
     margin:14px 0;
 }
 
+.gif{
+    width:100%;
+    max-width:280px;
+    border-radius:20px;
+    margin:12px auto;
+    display:block;
+}
+
 .question{
-    font-size:1.25rem;
-    margin:18px 0;
+    font-size:1.3rem;
+    margin:20px 0;
 }
 
 .btn{
     background:#ff6f91;
     border:none;
-    padding:12px 32px;
-    border-radius:35px;
-    font-size:1rem;
+    padding:14px 36px;
+    border-radius:40px;
+    font-size:1.05rem;
     color:white;
     cursor:pointer;
     margin:8px;
@@ -75,27 +82,19 @@ p{
 }
 .btn:hover{
     background:#ff4d6d;
-    transform:scale(1.12);
+    transform:scale(1.15);
 }
 
 .hidden{display:none;}
 
-.gif{
-    width:100%;
-    max-width:260px;
-    border-radius:18px;
-    margin:10px auto;
-    display:block;
-}
-
 .end{
-    margin-top:15px;
     font-size:1.15rem;
     color:#ffe5ec;
+    margin-top:18px;
 }
 
 @keyframes fadeIn{
-    from{opacity:0;transform:scale(.9);}
+    from{opacity:0;transform:scale(.85);}
     to{opacity:1;transform:scale(1);}
 }
 </style>
@@ -104,19 +103,22 @@ p{
 <body>
 
 <div class="card">
-    <h1>Chocolate Day, Tanya 🍫❤️</h1>
+    <h1>Tanya 🍫❤️</h1>
 
-    <!-- TOP ROMANTIC GIF -->
-    <img class="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2RzM3A2NW9xNXk4eXd0eDZwY3R3M3VnZ2FvdmY5aHFlYWdzZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif">
+    <!-- CUTE GIF -->
+    <img class="gif" src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
 
     <p>
-        Baby… look at this page slowly 😌  
-        It’s full of things I want to do with you —  
-        gently, closely, endlessly ❤️
+        Baby… this page is chaos 😌  
+        Just like my feelings for you.  
+        Soft, crazy, sweet, intense — **everything** ❤️
     </p>
 
+    <!-- FLIRTY GIF -->
+    <img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+
     <div id="question" class="question">
-        Do you like it when I feed you chocolate with my own hands? 🍫🤲
+        Do you like it when I pull you close just to look at you? 😏❤️
     </div>
 
     <button class="btn" onclick="next()">YES 💕</button>
@@ -124,54 +126,54 @@ p{
 
     <div id="end" class="end hidden">
 
-        <!-- CHOCOLATE FEEDING GIF -->
+        <!-- CHOCOLATE FEED -->
         <img class="gif" src="https://media.giphy.com/media/3oz8xG5C6VCdH7ePtu/giphy.gif">
 
         <p>
-            I knew you’d say yes…  
-            because you like being close to me 😌  
-            and I love taking care of you ❤️
+            I knew it.  
+            You always choose closeness with me 😌🍫
         </p>
 
-        <!-- KISS GIF -->
+        <!-- KISS -->
         <img class="gif" src="https://media.giphy.com/media/bGm9FuBCGg4SY/giphy.gif">
 
         <p>
-            This is the part where I steal a kiss 💋  
-            slow… soft… just for you.
+            This is where I kiss you —  
+            not fast, not loud,  
+            just enough to make you smile 💋
         </p>
 
-        <!-- HUG GIF -->
+        <!-- HUG -->
         <img class="gif" src="https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif">
 
         <p>
             And then I hug you like this 🫂  
-            not to leave…  
-            but to stay.
+            tight… calm… safe.
         </p>
 
-        <!-- EXTRA ROMANTIC HEART GIF -->
+        <!-- HEART EXPLOSION -->
         <img class="gif" src="https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif">
 
         <p>
             Tanya…  
-            chocolates are sweet,  
-            kisses are soft,  
-            hugs are warm —  
-            but **you** are my favorite feeling ❤️  
+            I don’t want perfect moments.  
+            I want **you** in all moments.  
+            Laughing, quiet, messy, sleepy —  
+            always mine, always chosen ❤️  
             <br><br>
-            <strong>I’ve got you. Always.</strong>
+            <strong>Come here. I’ve got you.</strong>
         </p>
     </div>
 </div>
 
 <script>
 const questions = [
- "Do you feel safe when I pull you close without saying anything? 🫂",
- "Do you like slow kisses more than rushed words? 💋",
- "Do you imagine your head on my chest after a long day? 🤍",
- "Do you want hugs that last longer than time? 🫶",
- "Do you want me — today, tomorrow, always? ❤️"
+ "Do you like slow hugs more than loud words? 🫂",
+ "Do you feel safe when I say ‘I’m here’? ❤️",
+ "Do you imagine resting your head on my chest? 🤍",
+ "Do you like when I tease you and then protect you? 😏",
+ "Do you want kisses that feel like comfort? 💋",
+ "Do you want me — fully, softly, always? ❤️"
 ];
 
 let i = 0;
