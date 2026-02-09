@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Chocolate Day — Tanya ❤️</title>
+<title>Tanya ❤️ Chocolate Day</title>
 
 <style>
 body{
     margin:0;
     height:100vh;
     font-family:'Segoe UI',sans-serif;
-    background:#120707;
+    background:#0f0505;
     overflow:hidden;
     display:flex;
     justify-content:center;
@@ -17,17 +17,17 @@ body{
     color:#fff;
 }
 
-/* LOVE BACKGROUND */
+/* Background love text */
 body::before{
-    content:"I love you Tanya • I love you Tanya • I love you Tanya •";
+    content:"I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️ I LOVE YOU TANYA ❤️";
     position:absolute;
     width:300%;
     height:300%;
-    font-size:40px;
-    color:rgba(255,182,193,0.07);
+    font-size:42px;
+    color:rgba(255,182,193,0.06);
     transform:rotate(-25deg);
     line-height:1.6;
-    animation:bgMove 28s linear infinite;
+    animation:bgMove 25s linear infinite;
 }
 @keyframes bgMove{
     to{transform:translateX(-60%) rotate(-25deg);}
@@ -35,19 +35,19 @@ body::before{
 
 .card{
     z-index:2;
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(16px);
-    padding:36px;
-    width:460px;
+    background:rgba(255,255,255,0.14);
+    backdrop-filter:blur(18px);
+    padding:32px;
+    width:480px;
     border-radius:30px;
     text-align:center;
-    box-shadow:0 0 45px rgba(0,0,0,0.6);
-    animation:fadeIn 2s ease;
+    box-shadow:0 0 50px rgba(0,0,0,0.7);
+    animation:fadeIn 1.8s ease;
 }
 
 h1{
-    font-size:2.4rem;
     color:#ffb3c6;
+    font-size:2.5rem;
     margin-bottom:10px;
 }
 
@@ -59,19 +59,13 @@ p{
 
 .question{
     font-size:1.25rem;
-    margin:22px 0;
-    animation:pulse 1.6s infinite;
-}
-
-@keyframes pulse{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.05);}
+    margin:18px 0;
 }
 
 .btn{
     background:#ff6f91;
     border:none;
-    padding:12px 30px;
+    padding:12px 32px;
     border-radius:35px;
     font-size:1rem;
     color:white;
@@ -86,38 +80,18 @@ p{
 
 .hidden{display:none;}
 
+.gif{
+    width:100%;
+    max-width:260px;
+    border-radius:18px;
+    margin:10px auto;
+    display:block;
+}
+
 .end{
-    margin-top:20px;
+    margin-top:15px;
     font-size:1.15rem;
     color:#ffe5ec;
-}
-
-/* Animations */
-.feed{
-    font-size:2.8rem;
-    animation:feed 1.8s infinite;
-}
-@keyframes feed{
-    0%{transform:translateX(-20px);}
-    50%{transform:translateX(20px);}
-    100%{transform:translateX(-20px);}
-}
-
-.hugkiss{
-    font-size:2.4rem;
-    animation:pulse 1.4s infinite;
-}
-
-/* Floating hearts */
-.heart{
-    position:absolute;
-    font-size:22px;
-    animation:float 6s linear infinite;
-    opacity:.8;
-}
-@keyframes float{
-    from{transform:translateY(100vh);}
-    to{transform:translateY(-10vh);}
 }
 
 @keyframes fadeIn{
@@ -130,12 +104,15 @@ p{
 <body>
 
 <div class="card">
-    <h1>Happy Chocolate Day, Tanya 🍫❤️</h1>
+    <h1>Chocolate Day, Tanya 🍫❤️</h1>
+
+    <!-- TOP ROMANTIC GIF -->
+    <img class="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2RzM3A2NW9xNXk4eXd0eDZwY3R3M3VnZ2FvdmY5aHFlYWdzZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif">
 
     <p>
-        Baby… this is not just a page.  
-        It’s me, holding your hand softly,  
-        asking you things that come straight from my heart 😌
+        Baby… look at this page slowly 😌  
+        It’s full of things I want to do with you —  
+        gently, closely, endlessly ❤️
     </p>
 
     <div id="question" class="question">
@@ -146,38 +123,55 @@ p{
     <button class="btn" onclick="next()">DEFINITELY YES 😘</button>
 
     <div id="end" class="end hidden">
-        <div class="feed">🤲🍫😋</div>
+
+        <!-- CHOCOLATE FEEDING GIF -->
+        <img class="gif" src="https://media.giphy.com/media/3oz8xG5C6VCdH7ePtu/giphy.gif">
 
         <p>
-            I knew it…  
-            Because you and I,  
-            we always choose each other — gently, surely, happily ❤️
+            I knew you’d say yes…  
+            because you like being close to me 😌  
+            and I love taking care of you ❤️
         </p>
 
-        <div class="hugkiss">🫂💋</div>
+        <!-- KISS GIF -->
+        <img class="gif" src="https://media.giphy.com/media/bGm9FuBCGg4SY/giphy.gif">
 
         <p>
-            Now come here…  
-            no talking, no rushing.  
-            Just a long hug 🫂  
-            a soft kiss 💋  
-            and me whispering…  
+            This is the part where I steal a kiss 💋  
+            slow… soft… just for you.
+        </p>
+
+        <!-- HUG GIF -->
+        <img class="gif" src="https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif">
+
+        <p>
+            And then I hug you like this 🫂  
+            not to leave…  
+            but to stay.
+        </p>
+
+        <!-- EXTRA ROMANTIC HEART GIF -->
+        <img class="gif" src="https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif">
+
+        <p>
+            Tanya…  
+            chocolates are sweet,  
+            kisses are soft,  
+            hugs are warm —  
+            but **you** are my favorite feeling ❤️  
             <br><br>
-            <strong>“I’ve got you, Tanya. Always.” ❤️</strong>
+            <strong>I’ve got you. Always.</strong>
         </p>
     </div>
 </div>
 
 <script>
 const questions = [
- "Do you feel calm when I pull you close without saying anything? 🫂",
- "Do you feel safe when I look at you and smile softly? 😌❤️",
- "Do you like when I say your name slowly… Tanya? 🥺",
- "Do you imagine resting your head on my chest after a long day? 🤍",
- "Do you want hugs that last longer than words? 🫶",
- "Do you like knowing you’re deeply wanted, not rushed? ❤️",
- "Do you want quiet nights, tangled fingers, and shared smiles? 🌙",
- "Do you want me — today, tomorrow, and in all the little moments? 💕"
+ "Do you feel safe when I pull you close without saying anything? 🫂",
+ "Do you like slow kisses more than rushed words? 💋",
+ "Do you imagine your head on my chest after a long day? 🤍",
+ "Do you want hugs that last longer than time? 🫶",
+ "Do you want me — today, tomorrow, always? ❤️"
 ];
 
 let i = 0;
@@ -194,16 +188,6 @@ function next(){
         end.classList.remove("hidden");
     }
 }
-
-// floating hearts
-setInterval(()=>{
-    const h=document.createElement("div");
-    h.className="heart";
-    h.innerHTML="❤️";
-    h.style.left=Math.random()*100+"vw";
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),6000);
-},300);
 </script>
 
 </body>
