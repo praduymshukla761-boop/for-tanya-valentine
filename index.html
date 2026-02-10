@@ -1,159 +1,210 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Sweetest 🍫</title>
+    <title>Teddy Day | Executive Edition 🧸</title>
     <style>
         :root {
-            --primary: #6d4c41;
-            --accent: #ff4081;
-            --bg: #fff5f7;
+            --bear-brown: #795548;
+            --heart-red: #ff4b2b;
+            --soft-bg: #fff5f6;
         }
 
         body {
-            background-color: var(--bg);
-            font-family: 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+            background-color: var(--soft-bg);
             margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(255, 64, 129, 0.1);
+        #app {
             text-align: center;
-            max-width: 450px;
-            width: 85%;
-            transition: all 0.5s ease;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
         }
 
-        .hidden { display: none; }
-
-        h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 10px; }
-        p { color: #8d6e63; font-size: 1.1rem; line-height: 1.5; }
-
-        .main-img {
-            width: 120px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
-            animation: heartbeat 1.5s infinite;
+        .instruction {
+            color: var(--bear-brown);
+            font-weight: 600;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            animation: fadeIn 2s ease;
         }
 
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        /* The Teddy Bear */
+        .teddy-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        .btn-group {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .teddy-img {
+            width: 200px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+            z-index: 5;
             position: relative;
         }
 
-        button {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #yesBtn { background: var(--accent); color: white; box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4); }
-        #noBtn { background: #eee; color: #999; position: absolute; left: 60%; }
-
-        .letter-text {
-            text-align: left;
-            font-style: italic;
-            background: #fffdf9;
-            padding: 20px;
-            border-left: 4px solid var(--accent);
+        /* The Hug Meter */
+        .meter-container {
+            width: 200px;
+            height: 10px;
+            background: #e0e0e0;
             border-radius: 10px;
-            margin-top: 20px;
+            margin: 30px auto;
+            overflow: hidden;
             display: none;
         }
 
-        /* Chocolate Falling Animation */
-        .piece {
-            position: fixed;
-            top: -50px;
-            z-index: 100;
-            user-select: none;
-            pointer-events: none;
-            animation: fall 3s linear forwards;
+        #fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            transition: width 0.1s;
         }
 
-        @keyframes fall {
-            to { transform: translateY(110vh) rotate(360deg); }
+        /* Final Message */
+        #finalMessage {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: white;
+            z-index: 100;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .letter-content {
+            background: #fffafa;
+            border: 2px dashed #ff4b2b;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h1 { color: var(--heart-red); margin-top: 0; }
+        p { line-height: 1.6; color: #444; font-size: 1.1rem; }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .pulse { animation: pulseAnim 0.5s infinite alternate; }
+        @keyframes pulseAnim {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            animation: floatUp 2s ease-out forwards;
+            z-index: 99;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-200px) scale(1.5); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container" id="box">
-        <div id="step1">
-            <img src="https://cdn-icons-png.flaticon.com/512/3480/3480741.png" class="main-img">
-            <h1>Happy Chocolate Day!</h1>
-            <p>They say chocolate is the language of love, but even the finest Swiss cocoa isn't as sweet as you.</p>
-            <p><b>Will you let me sweeten your life forever?</b></p>
-            
-            <div class="btn-group">
-                <button id="yesBtn" onclick="nextStep()">YES!</button>
-                <button id="noBtn" onmouseover="moveNo()">NO</button>
-            </div>
+    <div id="app">
+        <p class="instruction" id="hint">Long-press the Teddy to give me a hug! 🤗</p>
+        
+        <div class="teddy-wrapper" id="teddy">
+            <img src="https://cdn-icons-png.flaticon.com/512/3081/3081987.png" class="teddy-img" alt="Teddy">
         </div>
 
-        <div id="step2" class="hidden">
-            <img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png" class="main-img">
-            <h1>My Sweet Valentine... 🍫</h1>
-            <div class="letter-text" id="letter">
-                "Just like a box of chocolates, life with you is full of beautiful surprises. You are my dark chocolate (intense and deep), my milk chocolate (gentle and sweet), and my white chocolate (pure and bright). Thank you for being mine."
-            </div>
-            <p><i>I love you more than chocolate!</i></p>
+        <div class="meter-container" id="meter">
+            <div id="fill"></div>
+        </div>
+    </div>
+
+    <div id="finalMessage">
+        <div class="letter-content">
+            <img src="https://cdn-icons-png.flaticon.com/512/811/811524.png" width="80">
+            <h1>Hug Received! ❤️</h1>
+            <p>To my beautiful wiffy,</p>
+            <p>I may not be as soft as a teddy bear, but my arms are the safest place for you to be. On this Teddy Day, I promise to be your forever cuddle partner.</p>
+            <p><b>Now come here and give me that real hug you just promised!</b></p>
+            <button onclick="location.reload()" style="background: #444; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">Send Another Hug</button>
         </div>
     </div>
 
     <script>
-        function moveNo() {
-            const btn = document.getElementById('noBtn');
-            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
-            btn.style.position = 'fixed';
-            btn.style.left = x + 'px';
-            btn.style.top = y + 'px';
+        const teddy = document.getElementById('teddy');
+        const fill = document.getElementById('fill');
+        const meter = document.getElementById('meter');
+        const hint = document.getElementById('hint');
+        const final = document.getElementById('finalMessage');
+
+        let pressTimer;
+        let progress = 0;
+        let isHolding = false;
+
+        function startPress(e) {
+            isHolding = true;
+            meter.style.display = 'block';
+            teddy.classList.add('pulse');
+            hint.innerText = "Don't let go! Charging the hug... ⚡";
+            
+            pressTimer = setInterval(() => {
+                if(progress < 100) {
+                    progress += 2;
+                    fill.style.width = progress + '%';
+                    createHeart(e);
+                } else {
+                    complete();
+                }
+            }, 50);
         }
 
-        function nextStep() {
-            document.getElementById('step1').classList.add('hidden');
-            document.getElementById('step2').classList.remove('hidden');
-            document.getElementById('letter').style.display = 'block';
-            
-            // Start the chocolate rain
-            setInterval(createChocolate, 200);
+        function endPress() {
+            isHolding = false;
+            clearInterval(pressTimer);
+            if (progress < 100) {
+                progress = 0;
+                fill.style.width = '0%';
+                teddy.classList.remove('pulse');
+                hint.innerText = "Oops! You let go. Try again! 🤗";
+            }
         }
 
-        function createChocolate() {
-            const items = ['🍫', '❤️', '🍬', '✨', '💖'];
-            const piece = document.createElement('div');
-            piece.className = 'piece';
-            piece.innerText = items[Math.floor(Math.random() * items.length)];
-            piece.style.left = Math.random() * 100 + 'vw';
-            piece.style.fontSize = Math.random() * 20 + 20 + 'px';
-            piece.style.animationDuration = Math.random() * 2 + 2 + 's';
-            document.body.appendChild(piece);
-            
-            setTimeout(() => piece.remove(), 3000);
+        function complete() {
+            clearInterval(pressTimer);
+            final.style.display = 'flex';
         }
+
+        function createHeart(e) {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = '❤️';
+            const x = e.touches ? e.touches[0].clientX : e.clientX;
+            const y = e.touches ? e.touches[0].clientY : e.clientY;
+            heart.style.left = (x - 10) + 'px';
+            heart.style.top = (y - 10) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 2000);
+        }
+
+        // Event Listeners for Mobile & Desktop
+        teddy.addEventListener('mousedown', startPress);
+        teddy.addEventListener('touchstart', startPress);
+        window.addEventListener('mouseup', endPress);
+        window.addEventListener('touchend', endPress);
     </script>
 </body>
 </html>
