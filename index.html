@@ -1,125 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Eternal Bond | Pradyumn & Wiffy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #fffcf9; overflow-x: hidden; scroll-behavior: smooth; }
-        .font-cursive { font-family: 'Dancing Script', cursive; }
-        .font-royal { font-family: 'Cinzel', serif; }
-        .bg-maroon { background: linear-gradient(135deg, #4a0000 0%, #800000 100%); }
-        .gold-border { border: 3px double #D4AF37; }
-        .heart-float { position: fixed; font-size: 1.5rem; animation: float 5s linear infinite; opacity: 0; pointer-events: none; z-index: 100; }
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-        }
-        .shimmer { background: linear-gradient(90deg, #D4AF37, #f3e5ab, #D4AF37); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s linear infinite; }
-        @keyframes shine { to { background-position: 200% center; } }
-    </style>
+<meta charset="UTF-8">
+<title>Promise Day 💍 | For Tanya ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        background: linear-gradient(180deg, #ffdde1, #ee9ca7);
+        color: #4a1c2d;
+        text-align: center;
+    }
+    .container {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    }
+    h2 {
+        font-size: 1.6rem;
+        margin-top: 40px;
+    }
+    p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin: 15px 0;
+    }
+    .gif {
+        width: 100%;
+        max-width: 350px;
+        border-radius: 20px;
+        margin: 15px 0;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .vows {
+        background: rgba(255,255,255,0.4);
+        padding: 25px;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+    .vow {
+        text-align: left;
+        margin: 12px 0;
+        font-size: 1.1rem;
+    }
+    .contract {
+        background: #fff;
+        color: #333;
+        padding: 30px;
+        border-radius: 25px;
+        margin-top: 40px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+        text-align: left;
+    }
+    .signature {
+        margin-top: 40px;
+        font-style: italic;
+        font-size: 1.2rem;
+    }
+    .heart {
+        font-size: 2rem;
+        animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+</style>
 </head>
+
 <body>
+<div class="container">
 
-    <div id="heart-rain"></div>
+    <h1>💖 Promise Day 💖</h1>
+    <p><strong>For my forever, Tanya ❤️</strong></p>
 
-    <section class="h-screen flex flex-col items-center justify-center text-center p-6 bg-maroon text-white relative">
-        <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/mandala.png');"></div>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kZzH6S7S6R4C4/giphy.gif" class="w-44 h-44 mb-6 rounded-full border-4 border-[#D4AF37] shadow-2xl">
-        <h1 class="text-5xl md:text-7xl font-royal shimmer mb-4">Shubh Promise Day</h1>
-        <p class="text-xl md:text-2xl font-cursive text-rose-200">My Promises. My Vows. My Wiffy.</p>
-        <button onclick="document.getElementById('vows').scrollIntoView({behavior: 'smooth'})" class="mt-12 px-10 py-4 border-2 border-[#D4AF37] text-[#D4AF37] font-bold rounded-full hover:bg-[#D4AF37] hover:text-red-900 transition-all duration-500 uppercase tracking-tighter">Enter the Mandap</button>
-    </section>
+    <img class="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Love Gif">
+    <img class="gif" src="https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif" alt="Hug Gif">
 
-    <section id="vows" class="py-20 px-4 max-w-4xl mx-auto">
-        <h2 class="text-4xl font-royal text-center text-red-900 mb-16 italic underline decoration-[#D4AF37]">The 7 Digital Phere</h2>
-        
-        <div id="vow-container" class="space-y-10">
-            <div class="bg-white p-6 rounded-3xl shadow-xl gold-border flex flex-col md:flex-row items-center gap-6">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2SpXz0NBiLXuL6G4/giphy.gif" class="w-32 h-32 rounded-full border-4 border-red-50">
-                <div>
-                    <h3 class="text-xl font-bold text-red-800">1. Pher - Nourishment</h3>
-                    <p class="text-gray-600">I promise to always keep you fed, happy, and never let the fridge run out of your favorite treats.</p>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-3xl shadow-xl gold-border flex flex-col md:flex-row items-center gap-6">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKoWXlo3M1nKSZ2/giphy.gif" class="w-32 h-32 rounded-full border-4 border-red-50">
-                <div>
-                    <h3 class="text-xl font-bold text-red-800">2. Pher - Strength</h3>
-                    <p class="text-gray-600">I promise to be your shield against the world. Your worries are mine, and I will solve them all.</p>
-                </div>
-            </div>
-            <div class="bg-red-50 p-6 rounded-3xl shadow-xl gold-border text-center">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Gv8S7pEHSIn96/giphy.gif" class="w-full h-48 object-cover rounded-2xl mb-4">
-                <h3 class="text-2xl font-bold text-red-800">7. Pher - Eternal Union</h3>
-                <p class="text-gray-700 italic">"In this life, and the six that follow, I promise to find you and love you again."</p>
-            </div>
-        </div>
-    </section>
+    <p>
+        Today isn’t just Promise Day…  
+        Today is me opening my heart completely and placing it in your hands.  
+        No filters. No conditions. Just love — pure, deep, and forever.
+    </p>
 
-    <section class="py-20 px-4 bg-maroon text-white">
-        <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-lg text-gray-900 gold-border relative">
-            <h2 class="text-3xl font-royal text-center mb-8 underline decoration-red-800">The Eternal Bond Contract</h2>
-            <div class="space-y-4 text-sm md:text-base leading-relaxed">
-                <p><strong>Witnessed By:</strong> The Stars & This Website</p>
-                <p><strong>Party A:</strong> Pradyumn</p>
-                <p><strong>Party B:</strong> My Wiffy</p>
-                <hr class="border-red-200">
-                <p>1. <strong>Commitment:</strong> Party A shall love Party B unconditionally, even when she is sleepy or grumpy.</p>
-                <p>2. <strong>Protection:</strong> Party A assumes all responsibility for spider-removal and nightmare-shielding duties.</p>
-                <p>3. <strong>Duration:</strong> This agreement is valid for 7 lifetimes, with an option to renew for infinity.</p>
-            </div>
+    <img class="gif" src="https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif" alt="Holding Hands">
 
-            <div class="mt-12 text-center">
-                <label class="block text-xs font-bold uppercase text-gray-400 mb-2">Signature of Acceptance</label>
-                <input type="text" id="signature" placeholder="Type your name to seal the phere" class="w-full p-4 border-b-2 border-red-800 text-center font-cursive text-3xl outline-none bg-transparent">
-                <button onclick="sealVows()" class="mt-8 w-full bg-red-800 text-white font-bold py-4 rounded-full shadow-lg hover:bg-red-700 transition transform hover:scale-105">SEAL THE VOWS ❤️</button>
-            </div>
-        </div>
-    </section>
+    <h2>💍 My 7 Marriage Promises to You 💍</h2>
 
-    <footer class="py-10 text-center text-gray-400 italic">
-        Always & Forever, Pradyumn
-    </footer>
-
-    <div id="overlay" class="fixed inset-0 bg-white z-[1000] hidden flex-col items-center justify-center p-6 text-center">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4pTdcifP3TFmS1m8/giphy.gif" class="w-72 mb-6 rounded-3xl shadow-2xl">
-        <h2 id="finalMsg" class="text-5xl font-cursive text-red-700"></h2>
-        <p class="text-xl mt-4 text-gray-700 font-royal">The Ceremony is Complete.</p>
-        <p class="mt-2 text-red-500 font-bold">Happy Promise Day, Wiffy!</p>
+    <div class="vows">
+        <div class="vow">1️⃣ I promise to choose you every day — on happy days, hard days, silent days, and forever days.</div>
+        <div class="vow">2️⃣ I promise to protect your heart, your dreams, your tears, and your smile like they are sacred.</div>
+        <div class="vow">3️⃣ I promise to hold your hand when you’re strong and pull you close when you’re tired.</div>
+        <div class="vow">4️⃣ I promise to listen — not just to your words, but to your silence too.</div>
+        <div class="vow">5️⃣ I promise to grow with you, learn with you, fail with you, and rise again with you.</div>
+        <div class="vow">6️⃣ I promise to make you feel loved, wanted, desired, and safe — always.</div>
+        <div class="vow">7️⃣ I promise that no matter where life takes us, my heart will always find its way back to you.</div>
     </div>
 
-    <script>
-        // Floating Heart logic
-        setInterval(() => {
-            const heart = document.createElement('div');
-            heart.classList.add('heart-float');
-            heart.innerHTML = ['🌹', '❤️', '✨', '🪔'][Math.floor(Math.random() * 4)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-            document.getElementById('heart-rain').appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }, 300);
+    <img class="gif" src="https://media.giphy.com/media/1BcfiGuO4NxeM/giphy.gif" alt="Couple Love">
 
-        function sealVows() {
-            const name = document.getElementById('signature').value;
-            if(!name) return alert("Please sign your name, My Queen! ❤️");
-            
-            confetti({
-                particleCount: 200,
-                spread: 100,
-                origin: { y: 0.6 },
-                colors: ['#D4AF37', '#800000', '#ffffff']
-            });
+    <h2>📜 Our Love Contract 📜</h2>
 
-            setTimeout(() => {
-                document.getElementById('finalMsg').innerText = "Vows Sealed by " + name + "!";
-                document.getElementById('overlay').style.display = 'flex';
-            }, 600);
-        }
-    </script>
+    <div class="contract">
+        <p><strong>This Love Contract</strong> is made on Promise Day between:</p>
+
+        <p>
+            <strong>Partner 1:</strong> Praduym Shukla ❤️  
+            <br>
+            <strong>Partner 2:</strong> Tanya 💖
+        </p>
+
+        <p>
+            By signing this contract, both hearts agree to:
+        </p>
+
+        <ul>
+            <li>Love each other without limits.</li>
+            <li>Fight problems, not each other.</li>
+            <li>Stay loyal in actions, words, and thoughts.</li>
+            <li>Never give up — even when things get hard.</li>
+            <li>Build a future full of trust, warmth, and endless love.</li>
+        </ul>
+
+        <p>
+            This contract has <strong>no expiry date</strong>,  
+            cannot be broken,  
+            and is valid for this lifetime and every lifetime after.
+        </p>
+
+        <div class="signature">
+            <p>Signed with all my heart,</p>
+            <p><strong>Praduym ❤️</strong></p>
+
+            <p style="margin-top:30px;">Accepted and Signed by,</p>
+            <p><strong>Tanya ✍️❤️</strong></p>
+        </div>
+    </div>
+
+    <img class="gif" src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" alt="Kiss Gif">
+
+    <p class="heart">❤️ ❤️ ❤️</p>
+
+    <p>
+        This is not just a promise…  
+        This is my soul choosing you.  
+        Today. Tomorrow. Always.
+    </p>
+
+</div>
 </body>
 </html>
