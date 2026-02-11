@@ -3,110 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Promise | Pradyumn & Wiffy</title>
+    <title>The 7 Vows | Pradyumn & His Wiffy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #fff0f3; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background-color: #fffaf0; scroll-behavior: smooth; }
         .font-cursive { font-family: 'Dancing Script', cursive; }
-        .heart { position: absolute; font-size: 1.5rem; animation: float 6s linear infinite; opacity: 0; }
+        .font-royal { font-family: 'Cinzel', serif; }
+        .mandap-gradient { background: linear-gradient(135deg, #6b0000 0%, #990000 100%); }
+        .gold-border { border: 4px double #D4AF37; }
+        .vow-card:hover { transform: translateY(-5px); transition: all 0.3s ease; box-shadow: 0 20px 25px -5px rgba(185, 28, 28, 0.2); }
+        .heart { position: fixed; font-size: 1.5rem; animation: float 6s linear infinite; opacity: 0; z-index: 50; pointer-events: none; }
         @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+            0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
-        .contract-bg { background: repeating-linear-gradient(45deg, #fffcfc, #fffcfc 10px, #fff5f5 10px, #fff5f5 20px); }
     </style>
 </head>
 <body>
 
-    <div id="hearts-container" class="fixed inset-0 pointer-events-none"></div>
+    <div id="hearts-container"></div>
 
-    <section class="min-h-screen flex flex-col items-center justify-center text-center p-6 bg-white">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHFicXNidXN4Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/vNPy79BSfW5l6/giphy.gif" class="w-40 h-40 mb-4">
-        <h1 class="text-5xl md:text-7xl font-cursive text-rose-600">Happy Promise Day!</h1>
-        <p class="mt-4 text-gray-500 uppercase tracking-[0.3em] text-sm">Official Memo from the Office of Your Future CEO</p>
-        <a href="#contract" class="mt-10 px-8 py-3 bg-rose-500 text-white rounded-full font-bold hover:bg-rose-600 transition shadow-lg animate-bounce">
-            Review the Agreement ↓
-        </a>
+    <section class="h-screen flex flex-col items-center justify-center text-center p-6 mandap-gradient text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/mandala.png');"></div>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kZzH6S7S6R4C4/giphy.gif" class="w-48 h-48 mb-6 rounded-full border-4 border-[#D4AF37] shadow-2xl">
+        <h1 class="text-5xl md:text-7xl font-royal text-[#D4AF37] mb-4">Happy Promise Day</h1>
+        <p class="text-xl md:text-2xl font-cursive italic text-rose-200">"7 Vows, 7 Lifetimes, 1 Soul."</p>
+        <a href="#vows" class="mt-12 px-10 py-3 border-2 border-[#D4AF37] text-[#D4AF37] font-bold rounded-full hover:bg-[#D4AF37] hover:text-red-900 transition-all duration-500 tracking-widest">START THE PHERE</a>
     </section>
 
-    <section class="py-20 px-4 max-w-6xl mx-auto">
+    <section id="vows" class="py-20 px-4 max-w-5xl mx-auto">
+        <h2 class="text-4xl font-royal text-center text-red-900 mb-16 italic">Our Sacred Digital Phere</h2>
+        
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-3xl shadow-xl transform hover:-rotate-2 transition">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm93dzB4ZXA1N3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26hpKMTn5LRm9z_hS/giphy.gif" class="rounded-xl mb-4 w-full h-48 object-cover">
-                <h3 class="text-2xl font-cursive text-rose-500">The Loyalty Clause</h3>
-                <p class="text-gray-600 italic">"I promise to be your 100% shareholder. My heart belongs only to you, forever."</p>
+            <div class="bg-white p-6 rounded-3xl vow-card gold-border">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2SpXz0NBiLXuL6G4/giphy.gif" class="w-full h-40 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-red-800 font-royal">1. The Vow of Nourishment</h3>
+                <p class="text-gray-600 italic">"I promise to provide for our home and always ensure your favorite chocolate is in the fridge."</p>
             </div>
-            <div class="bg-white p-6 rounded-3xl shadow-xl transform hover:rotate-2 transition">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2SpXz0NBiLXuL6G4/giphy.gif" class="rounded-xl mb-4 w-full h-48 object-cover">
-                <h3 class="text-2xl font-cursive text-rose-500">The Happiness Merger</h3>
-                <p class="text-gray-600 italic">"I promise to invest daily in your smiles and provide a lifetime of cuddles."</p>
+
+            <div class="bg-white p-6 rounded-3xl vow-card gold-border">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKoWXlo3M1nKSZ2/giphy.gif" class="w-full h-40 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-red-800 font-royal">2. The Vow of Strength</h3>
+                <p class="text-gray-600 italic">"I promise to be your strength when you feel weak and your peace when the world is loud."</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl vow-card gold-border">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26hpKMTn5LRm9z_hS/giphy.gif" class="w-full h-40 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-red-800 font-royal">3. The Vow of Prosperity</h3>
+                <p class="text-gray-600 italic">"I promise to work hard for our future so we can travel the world and buy everything you desire."</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl vow-card gold-border">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4pTdcifP3TFmS1m8/giphy.gif" class="w-full h-40 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-red-800 font-royal">4. The Vow of Family</h3>
+                <p class="text-gray-600 italic">"I promise to cherish our bond and respect your family as my own, today and forever."</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl vow-card gold-border">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKuX9t0RdzgE492/giphy.gif" class="w-full h-40 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-red-800 font-royal">5. The Vow of Friendship</h3>
+                <p class="text-gray-600 italic">"I promise to be your best friend first—to laugh at your jokes and listen to your rants."</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl vow-card gold-border">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vNPy79BSfW5l6/giphy.gif" class="w-full h-40 object-cover rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-red-800 font-royal">6. The Vow of Health</h3>
+                <p class="text-gray-600 italic">"I promise to take care of you, to make you tea when you're sick, and to keep you happy and fit."</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl vow-card gold-border md:col-span-2">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Gv8S7pEHSIn96/giphy.gif" class="w-full h-64 object-cover rounded-xl mb-4">
+                <h3 class="text-2xl font-bold text-red-800 font-royal text-center">7. The Vow of Eternal Love</h3>
+                <p class="text-center text-gray-700 text-lg italic mt-2">"I promise that in every birth, in every world, and in every life, I will find you and choose you again."</p>
             </div>
         </div>
     </section>
 
-    <section id="contract" class="py-20 px-4 bg-rose-50">
-        <div class="max-w-2xl mx-auto bg-white p-10 rounded-lg shadow-2xl contract-bg border-t-8 border-rose-500">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center underline">Love Partnership Agreement</h2>
-            <div class="space-y-4 text-gray-700 leading-relaxed">
-                <p><strong>Party A:</strong> Pradyumn Shukla (The CEO)</p>
-                <p><strong>Party B:</strong> My Beautiful Wiffy</p>
-                <hr>
-                <p>1. Party A promises to love, protect, and annoy Party B for the rest of eternity.</p>
-                <p>2. Party A promises to provide unlimited snacks and emotional support upon request.</p>
-                <p>3. This contract is legally binding by the power of "True Love" and cannot be terminated.</p>
-            </div>
-
-            <div class="mt-10">
-                <label class="block text-sm font-bold text-gray-600 mb-2 uppercase">Type your name to Sign:</label>
-                <input type="text" id="wiffyName" placeholder="Enter your name here..." class="w-full p-4 border-2 border-dashed border-rose-300 rounded-lg focus:outline-none focus:border-rose-500 transition">
-                <button onclick="signContract()" class="w-full mt-4 bg-rose-600 text-white font-bold py-4 rounded-lg shadow-md hover:bg-rose-700 transition">
-                    SEAL THE DEAL ❤️
-                </button>
-            </div>
+    <section class="py-20 px-4 bg-red-950 text-white text-center">
+        <h2 class="text-4xl font-royal text-[#D4AF37] mb-6">Will you accept my Phere?</h2>
+        <div class="max-w-md mx-auto space-y-6">
+            <input type="text" id="wiffyName" placeholder="Enter your beautiful name..." class="w-full p-4 rounded-full text-gray-900 text-center font-bold focus:ring-4 focus:ring-yellow-500 outline-none">
+            <button onclick="sealTheVow()" class="w-full bg-[#D4AF37] text-red-950 font-bold py-4 rounded-full shadow-2xl hover:bg-yellow-400 transform hover:scale-105 transition duration-300">
+                SAY "I DO" TO MY PROMISES ❤️
+            </button>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-400">
-        <p>© 2026 Pradyumn Enterprises. All Rights Reserved.</p>
+    <footer class="py-10 text-center text-red-900 font-bold italic">
+        Made for my Wiffy | Forever yours, Pradyumn
     </footer>
 
-    <div id="successModal" class="fixed inset-0 bg-white z-[200] hidden flex-col items-center justify-center text-center p-6">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXZpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKoWXlo3M1nKSZ2/giphy.gif" class="w-64 mb-6">
-        <h2 id="congratsText" class="text-4xl font-cursive text-rose-600"></h2>
-        <p class="text-xl text-gray-600 mt-4">The contract is officially active. You are mine forever!</p>
-        <button onclick="location.reload()" class="mt-8 text-rose-400 underline">View Agreement Again</button>
+    <div id="overlay" class="fixed inset-0 bg-white z-[500] hidden flex-col items-center justify-center p-6 text-center">
+        <div class="animate-bounce">
+             <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3BwaG81Z3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdXJpZ3BxdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4pTdcifP3TFmS1m8/giphy.gif" class="w-64 mb-6 rounded-full border-8 border-red-500">
+        </div>
+        <h2 id="finalMsg" class="text-6xl font-cursive text-red-700"></h2>
+        <p class="text-2xl mt-4 text-gray-700 font-royal">You are now officially my 7-lifetime partner.</p>
+        <button onclick="location.reload()" class="mt-10 px-6 py-2 bg-red-600 text-white rounded-full">Back to our world</button>
     </div>
 
     <script>
-        // Hearts logic
+        // Falling Flowers/Hearts
         function createHeart() {
             const container = document.getElementById('hearts-container');
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.innerHTML = ['❤️', '💖', '💝', '✨'][Math.floor(Math.random() * 4)];
+            heart.innerHTML = ['🌹', '❤️', '✨', '🪔', '💎'][Math.floor(Math.random() * 5)];
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
             container.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 6000);
+            setTimeout(() => heart.remove(), 6000);
         }
-        setInterval(createHeart, 350);
+        setInterval(createHeart, 300);
 
-        // Sign logic
-        function signContract() {
+        function sealTheVow() {
             const name = document.getElementById('wiffyName').value;
-            if (name.trim() === "") {
-                alert("Please sign your name, Wiffy! ❤️");
+            if(!name) {
+                alert("Please enter your name to complete the ceremony! ❤️");
                 return;
             }
-
-            // Confetti
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#e11d48', '#ffffff'] });
-
-            // Show Success
-            document.getElementById('congratsText').innerText = "Congratulations, " + name + "!";
-            document.getElementById('successModal').style.display = 'flex';
+            
+            // Gold & Red Confetti
+            confetti({
+                particleCount: 250,
+                spread: 100,
+                origin: { y: 0.6 },
+                colors: ['#D4AF37', '#FF0000', '#ffffff']
+            });
+            
+            setTimeout(() => {
+                document.getElementById('finalMsg').innerText = "Vows Accepted by " + name + "!";
+                document.getElementById('overlay').style.display = 'flex';
+            }, 800);
         }
     </script>
 </body>
