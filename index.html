@@ -1,158 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Promise Day 💍 | For Tanya ❤️</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    body {
-        margin: 0;
-        font-family: 'Georgia', serif;
-        background: linear-gradient(180deg, #ffdde1, #ee9ca7);
-        color: #4a1c2d;
-        text-align: center;
-    }
-    .container {
-        padding: 20px;
-        max-width: 900px;
-        margin: auto;
-    }
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 5px;
-    }
-    h2 {
-        font-size: 1.6rem;
-        margin-top: 40px;
-    }
-    p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        margin: 15px 0;
-    }
-    .gif {
-        width: 100%;
-        max-width: 350px;
-        border-radius: 20px;
-        margin: 15px 0;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-    .vows {
-        background: rgba(255,255,255,0.4);
-        padding: 25px;
-        border-radius: 20px;
-        margin-top: 20px;
-    }
-    .vow {
-        text-align: left;
-        margin: 12px 0;
-        font-size: 1.1rem;
-    }
-    .contract {
-        background: #fff;
-        color: #333;
-        padding: 30px;
-        border-radius: 25px;
-        margin-top: 40px;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-        text-align: left;
-    }
-    .signature {
-        margin-top: 40px;
-        font-style: italic;
-        font-size: 1.2rem;
-    }
-    .heart {
-        font-size: 2rem;
-        animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.2); }
-        100% { transform: scale(1); }
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Delivery</title>
+    <style>
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ffccd5;
+            --text: #590d22;
+        }
+
+        body {
+            background: #fff0f3;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* The Envelope Container */
+        #stage {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #stage:hover { transform: scale(1.05); }
+
+        .envelope {
+            font-size: 100px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+        }
+
+        /* Success State - Hidden initially */
+        #hug-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .gif-stack {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .gif-stack img {
+            width: 280px;
+            border-radius: 20px;
+            border: 8px solid white;
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.3);
+        }
+
+        h1 { color: var(--primary); font-size: 2.2rem; margin: 10px 0; }
+        p { color: var(--text); font-size: 1.1rem; max-width: 300px; line-height: 1.5; }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .heart-particle {
+            position: fixed;
+            pointer-events: none;
+            animation: fly 3s ease-out forwards;
+        }
+
+        @keyframes fly {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-500px) translateX(calc(-50px + 100px * var(--dir))) scale(0); opacity: 0; }
+        }
+    </style>
 </head>
-
 <body>
-<div class="container">
 
-    <h1>💖 Promise Day 💖</h1>
-    <p><strong>For my forever, Tanya ❤️</strong></p>
-
-    <img class="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Love Gif">
-    <img class="gif" src="https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif" alt="Hug Gif">
-
-    <p>
-        Today isn’t just Promise Day…  
-        Today is me opening my heart completely and placing it in your hands.  
-        No filters. No conditions. Just love — pure, deep, and forever.
-    </p>
-
-    <img class="gif" src="https://media.giphy.com/media/3oriO6qJiXajN0TyDu/giphy.gif" alt="Holding Hands">
-
-    <h2>💍 My 7 Marriage Promises to You 💍</h2>
-
-    <div class="vows">
-        <div class="vow">1️⃣ I promise to choose you every day — on happy days, hard days, silent days, and forever days.</div>
-        <div class="vow">2️⃣ I promise to protect your heart, your dreams, your tears, and your smile like they are sacred.</div>
-        <div class="vow">3️⃣ I promise to hold your hand when you’re strong and pull you close when you’re tired.</div>
-        <div class="vow">4️⃣ I promise to listen — not just to your words, but to your silence too.</div>
-        <div class="vow">5️⃣ I promise to grow with you, learn with you, fail with you, and rise again with you.</div>
-        <div class="vow">6️⃣ I promise to make you feel loved, wanted, desired, and safe — always.</div>
-        <div class="vow">7️⃣ I promise that no matter where life takes us, my heart will always find its way back to you.</div>
+    <div id="stage" onclick="openSurprise()">
+        <div class="envelope">✉️</div>
+        <p style="font-weight: bold; color: #ff4d6d;">Pradyumn sent you a package...<br>Click to open</p>
     </div>
 
-    <img class="gif" src="https://media.giphy.com/media/1BcfiGuO4NxeM/giphy.gif" alt="Couple Love">
-
-    <h2>📜 Our Love Contract 📜</h2>
-
-    <div class="contract">
-        <p><strong>This Love Contract</strong> is made on Promise Day between:</p>
-
-        <p>
-            <strong>Partner 1:</strong> Praduym Shukla ❤️  
-            <br>
-            <strong>Partner 2:</strong> Tanya 💖
-        </p>
-
-        <p>
-            By signing this contract, both hearts agree to:
-        </p>
-
-        <ul>
-            <li>Love each other without limits.</li>
-            <li>Fight problems, not each other.</li>
-            <li>Stay loyal in actions, words, and thoughts.</li>
-            <li>Never give up — even when things get hard.</li>
-            <li>Build a future full of trust, warmth, and endless love.</li>
-        </ul>
-
-        <p>
-            This contract has <strong>no expiry date</strong>,  
-            cannot be broken,  
-            and is valid for this lifetime and every lifetime after.
-        </p>
-
-        <div class="signature">
-            <p>Signed with all my heart,</p>
-            <p><strong>Praduym ❤️</strong></p>
-
-            <p style="margin-top:30px;">Accepted and Signed by,</p>
-            <p><strong>Tanya ✍️❤️</strong></p>
+    <div id="hug-content">
+        <div class="gif-stack">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM284Nml2YmY1eG93NTVid2I5cnZueW54bTZ5bzN4ZzZyeHpseGZ0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/u9BxkneOzkltMlgS4f/giphy.gif" alt="Warm Hug">
         </div>
+        <h1>Happy Hug Day! ❤️</h1>
+        <p>This page isn't big enough to hold the actual hug I want to give you, so consider this a 1,000,000% digital squeeze until I see you.</p>
+        <div style="font-size: 2rem;">🧸✨👑</div>
     </div>
 
-    <img class="gif" src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" alt="Kiss Gif">
+    <script>
+        function openSurprise() {
+            document.getElementById('stage').style.display = 'none';
+            document.getElementById('hug-content').style.display = 'flex';
+            
+            // Explosion of hearts
+            for(let i = 0; i < 50; i++) {
+                createHeart();
+            }
+            
+            // Continuous floating hearts
+            setInterval(createHeart, 300);
+        }
 
-    <p class="heart">❤️ ❤️ ❤️</p>
-
-    <p>
-        This is not just a promise…  
-        This is my soul choosing you.  
-        Today. Tomorrow. Always.
-    </p>
-
-</div>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = ['❤️','💖','💝','💕','🌸'][Math.floor(Math.random() * 5)];
+            heart.className = 'heart-particle';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '80vh';
+            heart.style.setProperty('--dir', Math.random());
+            heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 3000);
+        }
+    </script>
 </body>
 </html>
