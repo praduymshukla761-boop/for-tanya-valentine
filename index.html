@@ -3,118 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Delivery</title>
+    <title>For You | Hug Day</title>
     <style>
         :root {
-            --primary: #ff4d6d;
-            --secondary: #ffccd5;
-            --text: #590d22;
+            --accent: #ff0a54;
+            --bg: #0b090a;
         }
 
-        body {
-            background: #fff0f3;
+        body, html {
             margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg);
+            font-family: 'Helvetica Neue', Helvetica, sans-serif;
+            color: white;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
-            overflow: hidden;
+        }
+
+        /* Animated Background Gradient */
+        .bg-gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #450920 0%, #0b090a 100%);
+            z-index: -1;
+        }
+
+        /* Glassmorphism Card */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 30px;
             text-align: center;
+            max-width: 400px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transition: transform 0.5s ease;
         }
 
-        /* The Envelope Container */
-        #stage {
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        #stage:hover { transform: scale(1.05); }
-
-        .envelope {
-            font-size: 100px;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-        }
-
-        /* Success State - Hidden initially */
-        #hug-content {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            animation: fadeIn 1s ease-in;
-        }
-
-        .gif-stack {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .gif-stack img {
-            width: 280px;
+        .gif-container {
+            width: 100%;
             border-radius: 20px;
-            border: 8px solid white;
-            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.3);
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 2px solid var(--accent);
         }
 
-        h1 { color: var(--primary); font-size: 2.2rem; margin: 10px 0; }
-        p { color: var(--text); font-size: 1.1rem; max-width: 300px; line-height: 1.5; }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-        /* Animations */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .typewriter {
+            font-size: 1.1rem;
+            color: #ffb3c1;
+            min-height: 50px;
+        }
 
-        .heart-particle {
-            position: fixed;
+        .btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(255, 10, 84, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 10, 84, 0.5);
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
             pointer-events: none;
-            animation: fly 3s ease-out forwards;
+            animation: move linear infinite;
         }
 
-        @keyframes fly {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-500px) translateX(calc(-50px + 100px * var(--dir))) scale(0); opacity: 0; }
+        @keyframes move {
+            from { transform: translateY(100vh); opacity: 1; }
+            to { transform: translateY(-10vh); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
-    <div id="stage" onclick="openSurprise()">
-        <div class="envelope">✉️</div>
-        <p style="font-weight: bold; color: #ff4d6d;">Pradyumn sent you a package...<br>Click to open</p>
+<div class="bg-gradient"></div>
+
+<div class="card" id="mainCard">
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0bjRocGZqZnd6emF1OHB6YmdyZ3Z6eHh4eHh4eHh4eHh4eHh4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lrr9rHuoJOE0w/giphy.gif" width="100%" alt="Hug">
     </div>
+    <h1>Hug Day 2026</h1>
+    <div class="typewriter" id="text"></div>
+    <button class="btn" onclick="activateLove()">Receive My Hug</button>
+</div>
 
-    <div id="hug-content">
-        <div class="gif-stack">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM284Nml2YmY1eG93NTVid2I5cnZueW54bTZ5bzN4ZzZyeHpseGZ0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/u9BxkneOzkltMlgS4f/giphy.gif" alt="Warm Hug">
-        </div>
-        <h1>Happy Hug Day! ❤️</h1>
-        <p>This page isn't big enough to hold the actual hug I want to give you, so consider this a 1,000,000% digital squeeze until I see you.</p>
-        <div style="font-size: 2rem;">🧸✨👑</div>
-    </div>
+<script>
+    const message = "Sending you the warmest, tightest, and most sincere hug. You're the best part of my day, every day.";
+    let i = 0;
 
-    <script>
-        function openSurprise() {
-            document.getElementById('stage').style.display = 'none';
-            document.getElementById('hug-content').style.display = 'flex';
-            
-            // Explosion of hearts
-            for(let i = 0; i < 50; i++) {
-                createHeart();
-            }
-            
-            // Continuous floating hearts
-            setInterval(createHeart, 300);
+    function typeWriter() {
+        if (i < message.length) {
+            document.getElementById("text").innerHTML += message.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
         }
+    }
 
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.innerHTML = ['❤️','💖','💝','💕','🌸'][Math.floor(Math.random() * 5)];
-            heart.className = 'heart-particle';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.top = '80vh';
-            heart.style.setProperty('--dir', Math.random());
-            heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 3000);
+    function activateLove() {
+        // Trigger particle storm
+        for(let j=0; j<100; j++) {
+            setTimeout(createParticle, j * 20);
         }
-    </script>
+        document.querySelector('.btn').innerText = "Sent with Love ❤️";
+    }
+
+    function createParticle() {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.innerHTML = '❤️';
+        p.style.left = Math.random() * 100 + 'vw';
+        p.style.top = '100vh';
+        p.style.fontSize = (Math.random() * 20 + 10) + 'px';
+        p.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 5000);
+    }
+
+    window.onload = typeWriter;
+</script>
+
 </body>
 </html>
