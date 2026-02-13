@@ -1,94 +1,187 @@
-import time
-import os
-import sys
-import math
-import random
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Legendary Kiss Day 💋</title>
 
-def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+<style>
+body{
+margin:0;
+padding:0;
+height:100vh;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#0f001a,#000);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
 
-def pulse_heart(iterations=20):
-    """Creates a beating heart effect using mathematical scaling."""
-    heart = [
-        "  ######     ######  ",
-        " ########## ########## ",
-        "############# #############",
-        "###########################",
-        " ######################### ",
-        "  #######################  ",
-        "   #####################   ",
-        "    ###################    ",
-        "      ###############      ",
-        "        ###########        ",
-        "          #######          ",
-        "            ###            ",
-        "             #             "
-    ]
-    
-    colors = ['\033[91m', '\033[31m', '\033[1;31m'] # Shades of Red/Pink
-    
-    for i in range(iterations):
-        clear()
-        color = colors[i % len(colors)]
-        # Add a "bounce" space to make it beat
-        padding = "\n" * (5 if i % 2 == 0 else 4)
-        print(color + padding)
-        
-        for line in heart:
-            # Shift the heart slightly to simulate a heartbeat pulse
-            shift = " " * (2 if i % 2 == 0 else 0)
-            print((shift + line).center(80))
-            
-        print(f"\n\033[1;37m[ HEARTBEAT MONITOR: TANYA MODE ACTIVE ]".center(80))
-        print(f"[ BPM: {random.randint(120, 150)} ]".center(80))
-        time.sleep(0.4)
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background:url('https://i.imgur.com/9a9bK0T.png');
+animation:move 80s linear infinite;
+opacity:0.4;
+}
+@keyframes move{
+from{background-position:0 0;}
+to{background-position:10000px 5000px;}
+}
 
-def kiss_explosion():
-    """Fills the screen with 10,000 digital kisses."""
-    clear()
-    kisses = ["💋", "😘", "❤️", "🌹"]
-    print("\033[1;33mINITIALIZING MASSIVE KISS PAYLOAD...\033[0m")
-    time.sleep(1.5)
-    
-    for _ in range(50):
-        line = "".join(random.choice(kisses) for _ in range(40))
-        print(line.center(80))
-        time.sleep(0.05)
+.moon{
+position:absolute;
+top:50px;
+right:80px;
+width:100px;
+height:100px;
+background:#fff;
+border-radius:50%;
+box-shadow:0 0 40px white;
+opacity:0.8;
+}
 
-def final_memo():
-    """The Big Reveal message."""
-    message = f"""
-    \033[1;32m
-    ============================================================
-                   OFFICIAL CEO MEMO: KISS DAY 2026
-    ============================================================
-    TO: Wiffy Tanya
-    FROM: Pradyumn (Your CEO of Love)
-    SUBJECT: Unlimited Kisses Acquisition
-    
-    Tanya, after a thorough audit of my heart, 
-    the results are in: 
-    
-    1. Your love is my #1 Asset.
-    2. Our bond has a 100% Growth Rate.
-    3. My demand for your kisses is at an All-Time High.
-    
-    I love you more than any code, any company, and any dream.
-    Happy Kiss Day, my beautiful Wife! 💍
-    ============================================================
-    \033[0m
-    """
-    for line in message.split('\n'):
-        print(line)
-        time.sleep(0.1)
+.container{
+position:relative;
+background:rgba(255,255,255,0.08);
+padding:30px;
+border-radius:25px;
+backdrop-filter:blur(15px);
+box-shadow:0 0 40px rgba(255,0,100,0.5);
+max-width:500px;
+z-index:2;
+}
 
-if __name__ == "__main__":
-    # The Full Sequence
-    try:
-        pulse_heart()
-        kiss_explosion()
-        final_memo()
-        # Keep the screen open
-        input("\n[ PRESS ENTER TO SEAL WITH A REAL KISS ]")
-    except KeyboardInterrupt:
-        print("\nLove.exe is still running in the background...")
+button{
+margin-top:15px;
+padding:10px 25px;
+border:none;
+border-radius:30px;
+background:#ff0055;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
+
+#text{
+margin-top:15px;
+min-height:120px;
+}
+
+.secret{
+display:none;
+}
+
+.float{
+position:absolute;
+font-size:22px;
+animation:rise linear infinite;
+}
+@keyframes rise{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+canvas{
+position:absolute;
+top:0;
+left:0;
+z-index:1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="moon"></div>
+<canvas id="fireworks"></canvas>
+
+<div class="container" id="mainBox">
+<h1>Happy Kiss Day Tanya 💋👑</h1>
+<input type="password" id="pass" placeholder="Enter our secret code ❤️">
+<br>
+<button onclick="unlock()">Unlock Love 🔐</button>
+
+<div class="secret" id="loveContent">
+<div id="text"></div>
+<button onclick="sendLove()">Send Legendary Kiss 💋🔥</button>
+<button onclick="share()">Share To WhatsApp 💌</button>
+</div>
+</div>
+
+<audio id="music" loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="kissSound">
+<source src="https://www.soundjay.com/human/kiss-01.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let correctPassword="tanya123"; // change this secret code
+
+function unlock(){
+let input=document.getElementById("pass").value;
+if(input===correctPassword){
+document.getElementById("loveContent").style.display="block";
+document.getElementById("music").play();
+type();
+}else{
+alert("Wrong code baby 😏 try again 💕");
+}
+}
+
+let message="Tanya... 🌙 Under this moon, I imagine holding you close 🤗 feeling your heartbeat against mine. I whisper how much I love you... then gently lift your chin and place the most passionate, soft, forever kiss on your lips 💋❤️ You are my queen. My forever. My only.";
+let i=0;
+function type(){
+if(i<message.length){
+document.getElementById("text").innerHTML+=message.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+
+function sendLove(){
+document.getElementById("kissSound").play();
+launchFireworks();
+alert("Muaaaahhh 💋 Tanya this kiss carries my soul ❤️🔥");
+}
+
+function share(){
+let url=window.location.href;
+window.open("https://wa.me/?text="+encodeURIComponent("Open this tonight under moonlight 💋🌙 "+url));
+}
+
+// floating emojis
+for(let i=0;i<40;i++){
+let el=document.createElement("div");
+el.classList.add("float");
+el.innerHTML=Math.random()>0.5?"💋":"💞";
+el.style.left=Math.random()*100+"vw";
+el.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(el);
+}
+
+// fireworks
+let canvas=document.getElementById("fireworks");
+let ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+function launchFireworks(){
+for(let i=0;i<120;i++){
+ctx.fillStyle="hsl("+Math.random()*360+",100%,50%)";
+ctx.beginPath();
+ctx.arc(Math.random()*canvas.width,Math.random()*canvas.height,3,0,Math.PI*2);
+ctx.fill();
+}
+setTimeout(()=>ctx.clearRect(0,0,canvas.width,canvas.height),900);
+}
+</script>
+
+</body>
+</html>
