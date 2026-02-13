@@ -1,150 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You | Hug Day</title>
-    <style>
-        :root {
-            --accent: #ff0a54;
-            --bg: #0b090a;
-        }
+import time
+import os
+import sys
+import math
+import random
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--bg);
-            font-family: 'Helvetica Neue', Helvetica, sans-serif;
-            color: white;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-        /* Animated Background Gradient */
-        .bg-gradient {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, #450920 0%, #0b090a 100%);
-            z-index: -1;
-        }
+def pulse_heart(iterations=20):
+    """Creates a beating heart effect using mathematical scaling."""
+    heart = [
+        "  ######     ######  ",
+        " ########## ########## ",
+        "############# #############",
+        "###########################",
+        " ######################### ",
+        "  #######################  ",
+        "   #####################   ",
+        "    ###################    ",
+        "      ###############      ",
+        "        ###########        ",
+        "          #######          ",
+        "            ###            ",
+        "             #             "
+    ]
+    
+    colors = ['\033[91m', '\033[31m', '\033[1;31m'] # Shades of Red/Pink
+    
+    for i in range(iterations):
+        clear()
+        color = colors[i % len(colors)]
+        # Add a "bounce" space to make it beat
+        padding = "\n" * (5 if i % 2 == 0 else 4)
+        print(color + padding)
+        
+        for line in heart:
+            # Shift the heart slightly to simulate a heartbeat pulse
+            shift = " " * (2 if i % 2 == 0 else 0)
+            print((shift + line).center(80))
+            
+        print(f"\n\033[1;37m[ HEARTBEAT MONITOR: TANYA MODE ACTIVE ]".center(80))
+        print(f"[ BPM: {random.randint(120, 150)} ]".center(80))
+        time.sleep(0.4)
 
-        /* Glassmorphism Card */
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 30px;
-            text-align: center;
-            max-width: 400px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-            transition: transform 0.5s ease;
-        }
+def kiss_explosion():
+    """Fills the screen with 10,000 digital kisses."""
+    clear()
+    kisses = ["💋", "😘", "❤️", "🌹"]
+    print("\033[1;33mINITIALIZING MASSIVE KISS PAYLOAD...\033[0m")
+    time.sleep(1.5)
+    
+    for _ in range(50):
+        line = "".join(random.choice(kisses) for _ in range(40))
+        print(line.center(80))
+        time.sleep(0.05)
 
-        .gif-container {
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            border: 2px solid var(--accent);
-        }
+def final_memo():
+    """The Big Reveal message."""
+    message = f"""
+    \033[1;32m
+    ============================================================
+                   OFFICIAL CEO MEMO: KISS DAY 2026
+    ============================================================
+    TO: Wiffy Tanya
+    FROM: Pradyumn (Your CEO of Love)
+    SUBJECT: Unlimited Kisses Acquisition
+    
+    Tanya, after a thorough audit of my heart, 
+    the results are in: 
+    
+    1. Your love is my #1 Asset.
+    2. Our bond has a 100% Growth Rate.
+    3. My demand for your kisses is at an All-Time High.
+    
+    I love you more than any code, any company, and any dream.
+    Happy Kiss Day, my beautiful Wife! 💍
+    ============================================================
+    \033[0m
+    """
+    for line in message.split('\n'):
+        print(line)
+        time.sleep(0.1)
 
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .typewriter {
-            font-size: 1.1rem;
-            color: #ffb3c1;
-            min-height: 50px;
-        }
-
-        .btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 10px 20px rgba(255, 10, 84, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 10, 84, 0.5);
-        }
-
-        /* Floating particles */
-        .particle {
-            position: absolute;
-            pointer-events: none;
-            animation: move linear infinite;
-        }
-
-        @keyframes move {
-            from { transform: translateY(100vh); opacity: 1; }
-            to { transform: translateY(-10vh); opacity: 0; }
-        }
-    </style>
-</head>
-<body>
-
-<div class="bg-gradient"></div>
-
-<div class="card" id="mainCard">
-    <div class="gif-container">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0bjRocGZqZnd6emF1OHB6YmdyZ3Z6eHh4eHh4eHh4eHh4eHh4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lrr9rHuoJOE0w/giphy.gif" width="100%" alt="Hug">
-    </div>
-    <h1>Hug Day 2026</h1>
-    <div class="typewriter" id="text"></div>
-    <button class="btn" onclick="activateLove()">Receive My Hug</button>
-</div>
-
-<script>
-    const message = "Sending you the warmest, tightest, and most sincere hug. You're the best part of my day, every day.";
-    let i = 0;
-
-    function typeWriter() {
-        if (i < message.length) {
-            document.getElementById("text").innerHTML += message.charAt(i);
-            i++;
-            setTimeout(typeWriter, 50);
-        }
-    }
-
-    function activateLove() {
-        // Trigger particle storm
-        for(let j=0; j<100; j++) {
-            setTimeout(createParticle, j * 20);
-        }
-        document.querySelector('.btn').innerText = "Sent with Love ❤️";
-    }
-
-    function createParticle() {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        p.innerHTML = '❤️';
-        p.style.left = Math.random() * 100 + 'vw';
-        p.style.top = '100vh';
-        p.style.fontSize = (Math.random() * 20 + 10) + 'px';
-        p.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        document.body.appendChild(p);
-        setTimeout(() => p.remove(), 5000);
-    }
-
-    window.onload = typeWriter;
-</script>
-
-</body>
-</html>
+if __name__ == "__main__":
+    # The Full Sequence
+    try:
+        pulse_heart()
+        kiss_explosion()
+        final_memo()
+        # Keep the screen open
+        input("\n[ PRESS ENTER TO SEAL WITH A REAL KISS ]")
+    except KeyboardInterrupt:
+        print("\nLove.exe is still running in the background...")
