@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private 🖤</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+background:#000;
+color:#eee;
+font-family:Montserrat;
+overflow:hidden;
+}
+
+/* LOCK SCREEN */
+.lock{
+position:fixed;
+inset:0;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:#000;
+z-index:999;
+text-align:center;
+}
+
+input{
+padding:12px;
+border-radius:8px;
+border:none;
+margin-top:10px;
+text-align:center;
+}
+
+button{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:linear-gradient(45deg,#ffd700,#ffae00);
+cursor:pointer;
+}
+
+.hidden{display:none}
+
+/* MAIN */
+.main{
+display:none;
+overflow-y:auto;
+height:100vh;
+}
+
+/* Hero */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.gold{
+background:linear-gradient(45deg,#ffd700,#ffae00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-family:"Playfair Display";
+}
+
+/* Cards */
+section{
+max-width:800px;
+margin:auto;
+padding:60px 20px;
+text-align:center;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,215,0,.15);
+padding:25px;
+border-radius:18px;
+margin-top:20px;
+line-height:1.8;
+}
+
+/* particles */
+.diamond{
+position:fixed;
+width:3px;height:3px;
+background:#ffd700;
+animation:fall 5s linear infinite;
+}
+@keyframes fall{
+from{transform:translateY(-10vh)}
+to{transform:translateY(110vh)}
+}
+
+/* proposal overlay */
+.overlay{
+position:fixed;
+inset:0;
+background:#000;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+.overlay.show{display:flex}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK -->
+<div class="lock" id="lock">
+<h2 class="gold">Private Universe 🖤</h2>
+<p>Enter our beginning date</p>
+<input type="password" id="pass" placeholder="DDMMYYYY">
+<button onclick="unlock()">Enter</button>
+</div>
+
+<!-- MAIN -->
+<div class="main" id="main">
+
+<div class="hero">
+<h1 class="gold" id="title"></h1>
+<p style="opacity:.6">Only you were meant to see this.</p>
+</div>
+
+<section>
+<h2 class="gold">Our Beginning</h2>
+<div class="card">
+18 August 2024. Telegram.  
+A simple message.  
+But destiny rarely announces itself loudly.
+
+That day…  
+You entered my story.
+</div>
+</section>
+
+<section>
+<h2 class="gold">What You Became</h2>
+<div class="card">
+Not just someone I love.  
+Someone I belong to.
+
+Through silence.  
+Through distance.  
+Through everything.
+</div>
+</section>
+
+<section>
+<h2 class="gold">Hear My Heart 🎙️</h2>
+<div class="card">
+Tap below.  
+Not to hear a voice…  
+But to hear what it carries.
+</div>
+<button onclick="speak()">Play</button>
+</section>
+
+<section>
+<h2 class="gold">Since We Began ⏳</h2>
+<div class="card">
+We’ve existed for:
+<h3 id="days"></h3>
+And I would still choose you again.
+</div>
+</section>
+
+<section>
+<h2 class="gold">So Tell Me…</h2>
+<div class="card">
+After every version of me…  
+After every version of you…
+
+If I still choose you like this…
+
+Will you stay? 🖤
+</div>
+
+<button onclick="yes()">Always</button>
+<button onclick="yes()">You already know</button>
+</section>
+
+</div>
+
+<div class="overlay" id="yes">
+<h1 class="gold">You were inevitable 🖤</h1>
+<p>Your Mr. Alien</p>
+</div>
+
+<script>
+// PASSWORD
+function unlock(){
+if(document.getElementById("pass").value==="18082024"){
+document.getElementById("lock").style.display="none";
+document.getElementById("main").style.display="block";
+document.body.style.overflow="auto";
+}
+}
+
+// typing
+const t="Happy Valentine's Day, Mrs. Alien 🖤";
+let i=0;
+function type(){
+if(i<t.length){
+document.getElementById("title").innerHTML+=t[i];
+i++;
+setTimeout(type,60);
+}}
+type();
+
+// particles
+setInterval(()=>{
+let d=document.createElement("div");
+d.className="diamond";
+d.style.left=Math.random()*100+"vw";
+document.body.appendChild(d);
+setTimeout(()=>d.remove(),5000);
+},200);
+
+// AI VOICE
+function speak(){
+const msg=new SpeechSynthesisUtterance(
+"My love... if you are hearing this, it means you reached the deepest part of me. And no matter how many lifetimes exist, I will still choose you."
+);
+speechSynthesis.speak(msg);
+}
+
+// anniversary counter
+const start=new Date("2024-08-18");
+const today=new Date();
+const diff=Math.floor((today-start)/(1000*60*60*24));
+document.getElementById("days").innerText=diff+" days";
+
+// yes
+function yes(){
+document.getElementById("yes").classList.add("show");
+}
+</script>
+
+</body>
+</html>
