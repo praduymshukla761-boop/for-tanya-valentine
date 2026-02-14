@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mrs. Alien 🖤</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+background:#050505;
+color:#eaeaea;
+font-family:Montserrat;
+overflow-x:hidden;
+}
+
+/* Luxury text */
+h1,h2{
+font-family:"Playfair Display",serif;
+letter-spacing:.5px;
+}
+
+/* Hero */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:radial-gradient(circle at top,#111,#000);
+}
+
+.gold{
+background:linear-gradient(45deg,#ffd700,#ffb300);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* Sections */
+section{
+max-width:850px;
+margin:auto;
+padding:70px 25px;
+}
+
+.card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,215,0,.15);
+border-radius:18px;
+padding:28px;
+line-height:1.8;
+backdrop-filter:blur(8px);
+box-shadow:0 0 40px rgba(255,215,0,.05);
+margin-top:20px;
+}
+
+/* Buttons */
+button{
+padding:14px 28px;
+border:none;
+border-radius:40px;
+margin:8px;
+cursor:pointer;
+font-weight:600;
+background:linear-gradient(45deg,#ffd700,#ff8c00);
+color:#000;
+}
+
+/* Floating gold particles */
+.spark{
+position:fixed;
+width:4px;height:4px;
+background:#ffd700;
+border-radius:50%;
+opacity:.6;
+animation:float 6s linear infinite;
+}
+@keyframes float{
+from{transform:translateY(100vh)}
+to{transform:translateY(-10vh)}
+}
+
+/* YES overlay */
+.overlay{
+position:fixed;
+inset:0;
+background:#000;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+.overlay.show{display:flex}
+
+.big{
+font-size:2.5rem;
+font-family:"Playfair Display";
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<h1 class="gold" id="title"></h1>
+<p style="opacity:.6;margin-top:10px">A private universe. Just us.</p>
+</div>
+
+<!-- BEGINNING -->
+<section>
+<h2 class="gold">It Started Quietly</h2>
+<div class="card">
+18 August 2024. Telegram.  
+No fireworks. No drama.  
+Just a message.
+
+But destiny doesn’t knock loudly.  
+Sometimes… it whispers.
+
+And that day, it whispered your name.
+</div>
+</section>
+
+<!-- FALL -->
+<section>
+<h2 class="gold">When I Fell</h2>
+<div class="card">
+I didn’t fall loudly.  
+I fell slowly.
+
+By November, you lived in my thoughts.  
+By January, I stopped hiding it.
+
+Because pretending I didn’t love you  
+felt more impossible than loving you.
+</div>
+</section>
+
+<!-- PAIN -->
+<section>
+<h2 class="gold">The Part That Hurt</h2>
+<div class="card">
+There was a time you walked away.  
+No replies. Just silence.
+
+But here’s the truth you never saw —  
+I didn’t stay because it was easy.  
+I stayed because it was you.
+</div>
+</section>
+
+<!-- ACCIDENT -->
+<section>
+<h2 class="gold">The Moment That Changed Me</h2>
+<div class="card">
+One day, life almost slipped through my fingers.
+
+And in those fading seconds…  
+I didn’t think about fear.  
+I thought about you.
+
+That’s when I understood something dangerous:
+
+You are not someone I love.  
+You are someone I belong to.
+</div>
+</section>
+
+<!-- FLIRTY SECTION -->
+<section>
+<h2 class="gold">Our Little Secret 😈</h2>
+<div class="card">
+Sweetie. Baby. Gulumoloo.  
+Mrs. Alien 👽
+
+And me?  
+Your Mr. Alien.
+
+A strange galaxy.  
+Where logic ends…  
+And we begin.
+</div>
+</section>
+
+<!-- AI VOICE LETTER -->
+<section>
+<h2 class="gold">Hear My Heart 🎙️</h2>
+<div class="card">
+Tap below…  
+And listen carefully.
+
+Not to the voice.  
+But to what it carries.
+</div>
+
+<button onclick="speak()">Play My Heart 🎙️</button>
+</section>
+
+<!-- ANNIVERSARY -->
+<section>
+<h2 class="gold">If Time Passes…</h2>
+<div class="card">
+Maybe you’re reading this years later.  
+Maybe everything looks different.
+
+But if this still exists…  
+It means one thing survived time:
+
+I still choose you.  
+Without hesitation.
+</div>
+</section>
+
+<!-- FINAL -->
+<section>
+<h2 class="gold">So Tell Me…</h2>
+<div class="card">
+After every silence…  
+Every memory…  
+Every lifetime…
+
+If I still look at you the same way…
+
+Will you still be mine? 🖤
+</div>
+
+<button onclick="yes()">Always Yours 🖤</button>
+<button onclick="yes()">You Already Know 😏</button>
+</section>
+
+<div class="overlay" id="yes">
+<div class="big gold">
+You were never an option.  
+You were inevitable. 🖤
+</div>
+<p style="opacity:.6;margin-top:10px">— Your Mr. Alien</p>
+</div>
+
+<script>
+// typing
+const t="Happy Valentine's Day, Mrs. Alien 🖤";
+let i=0;
+function type(){
+if(i<t.length){
+document.getElementById("title").innerHTML+=t[i];
+i++;
+setTimeout(type,60);
+}}
+type();
+
+// spark particles
+setInterval(()=>{
+let s=document.createElement("div");
+s.className="spark";
+s.style.left=Math.random()*100+"vw";
+document.body.appendChild(s);
+setTimeout(()=>s.remove(),6000);
+},200);
+
+// AI VOICE
+function speak(){
+const msg = new SpeechSynthesisUtterance(
+"My love... if you are hearing this, it means you reached the deepest part of my heart. I never needed perfect moments, only you. And no matter how many lifetimes exist, I will still find you, and still choose you."
+);
+msg.rate=0.9;
+msg.pitch=1;
+speechSynthesis.speak(msg);
+}
+
+// yes
+function yes(){
+document.getElementById("yes").classList.add("show");
+}
+</script>
+
+</body>
+</html>
