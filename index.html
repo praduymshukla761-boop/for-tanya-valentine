@@ -1,163 +1,258 @@
 <!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tanya My Love - Eternal Romance Website ❤️</title><!-- Google Font --><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"><!-- GSAP --><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script><!-- Particles.js --><script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script><style>
-body {
-margin:0;
-font-family:'Poppins', sans-serif;
-background: linear-gradient(180deg,#ffd6f9,#e4c1ff,#fff0c9);
-color:#6b004c;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tanya My Love - Eternal Romance Website ❤️</title><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script><style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
 overflow-x:hidden;
+background:linear-gradient(180deg,#ffe6fb,#f3d0ff,#fff1cc);
 }
 
-section {
-padding:100px 20px;
-text-align:center;
-}
-
-h1,h2 {
-font-family:'Great Vibes', cursive;
-}
-
-.hero {
-height:100vh;
+section{
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background: radial-gradient(circle,#ffc0f6,#e2b8ff,#ffeab6);
+padding:80px 25px;
+text-align:center;
+position:relative;
 }
 
-.hero h1 {
-font-size:60px;
-animation: glow 2s infinite alternate;
+h1,h2{
+font-family:'Great Vibes',cursive;
+color:#b30086;
 }
 
-@keyframes glow {
-from { text-shadow:0 0 10px pink; }
-to { text-shadow:0 0 30px gold; }
+.hero{
+background:url('https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif');
+background-size:cover;
+background-position:center;
+color:white;
 }
 
-button {
+.hero h1{
+font-size:70px;
+text-shadow:0 0 40px pink;
+}
+
+.loveBtn{
+padding:20px 40px;
+font-size:22px;
+border-radius:40px;
+border:none;
+background:linear-gradient(45deg,#ff4da6,#ffd700);
+color:white;
+cursor:pointer;
+margin-top:30px;
+}
+
+.timeline div{
+background:white;
+padding:25px;
+border-radius:25px;
+margin:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.1);
+font-size:22px;
+transition:.4s;
+}
+
+.timeline div:hover{
+transform:scale(1.08);
+}
+
+.cardGif{
+width:120px;
+margin-top:15px;
+}
+
+.promiseWall{
+white-space:nowrap;
+overflow:hidden;
+font-size:26px;
+animation:scroll 12s linear infinite;
+}
+
+@keyframes scroll{
+0%{transform:translateX(100%)}
+100%{transform:translateX(-100%)}
+}
+
+.quizBtn{
 padding:15px 30px;
-font-size:18px;
+background:#ff4da6;
 border:none;
 border-radius:30px;
-background:#ff4da6;
 color:white;
+font-size:18px;
 cursor:pointer;
 }
 
-.timeline {
-max-width:800px;
-margin:auto;
+.sunrise{
+background:url('https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif');
+background-size:cover;
+color:white;
 }
 
-.card {
-background:white;
-padding:20px;
-border-radius:20px;
-margin:20px;
-box-shadow:0 10px 20px rgba(0,0,0,.1);
+.infinity{
+background:url('https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif');
+background-size:cover;
+color:white;
+font-size:50px;
 }
 
-.gallery {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:10px;
+footer{
+background:url('https://media.giphy.com/media/QBd2kLB5qDmysEXre9/giphy.gif');
+background-size:cover;
+padding:80px;
+font-size:35px;
+color:white;
 }
 
-.gallery div {
-height:150px;
-background:pink;
-border-radius:20px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:bold;
+.clock{
+font-size:28px;
+margin-top:20px;
 }
 
-.promise {
-animation: marquee 15s linear infinite;
-white-space:nowrap;
+.heart{
+position:fixed;
+color:red;
+animation:float 6s linear infinite;
+font-size:24px;
 }
 
-@keyframes marquee {
-0%{transform:translateX(100%);} 
-100%{transform:translateX(-100%);} }
-
-footer {
-padding:40px;
-background:#ffc8ec;
+@keyframes float{
+0%{transform:translateY(100vh) scale(1)}
+100%{transform:translateY(-10vh) scale(1.5)}
 }
+
+.sparkle{
+position:fixed;
+pointer-events:none;
+font-size:18px;
+}
+
 </style></head>
-<body><script>
-const pass = prompt("Enter password for Tanya ❤️");
-if(pass !== "tanya123"){
-document.body.innerHTML="Access only for my Tanya ❤️";
+<body><div id="openingOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,#ffb6f9,#f3c8ff,#ffe8c9);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;z-index:9999;padding:30px;">
+<h1 style="font-family:'Great Vibes',cursive;font-size:60px;color:#b30086;">Tanya ❤️</h1>
+<p style="font-size:22px;color:#6b004c;max-width:600px;">
+Before you scroll… come one step closer 🤍<br><br>
+This entire little world below isn’t just a website.
+It’s my heart, written slowly for you.
+Every section is a hug.
+Every line is a kiss.
+Every moment is me choosing you again.
+<br><br>
+Ready to step inside our story? 💞
+</p>
+<button onclick="enterLoveWorld()" style="margin-top:30px;padding:15px 35px;border:none;border-radius:40px;background:linear-gradient(45deg,#ff4da6,#ffd700);color:white;font-size:20px;cursor:pointer;">
+Enter Our Love Story ❤️
+</button>
+</div><script>
+function enterLoveWorld(){
+ document.getElementById('openingOverlay').style.display='none';
+}
+
+
+let password = prompt("Enter password for Tanya ❤️")
+if(password !== "tanya_praduym_forever"){
+document.body.innerHTML="Only Tanya can open this magical love universe ❤️"
 }
 </script><section class="hero">
-<h1>Tanya ❤️ My Wife, My Girlfriend, My Forever 🥰💋</h1>
-<button onclick="loveExplosion()">I Love You Forever ❤️</button>
+<h1>Tanya ❤️ My Eternal Love 🥰 My Wife My Forever 💋</h1>
+<button class="loveBtn" onclick="explodeHearts()">Tap My Heart ❤️</button>
+<img class="cardGif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
 </section><section>
-<h2>Our Love Story Timeline ❤️</h2>
+<h2>Our Love Journey Timeline 🌹</h2>
 <div class="timeline">
-<div class="card">Day 1: First Smile 😘</div>
-<div class="card">First Chat 💕</div>
-<div class="card">First Hug 🤗</div>
-<div class="card">First Kiss 💋</div>
-<div class="card">First Fight (Still Love You) ❤️</div>
-<div class="card">Wedding Dreams 💍</div>
-<div class="card">Every Day Together 🌹</div>
-<div class="card">Forever Journey Begins ✨</div>
+<div>18 Aug 2024 — <b>The Day Everything Began 💓</b><br>Some beginnings don’t make noise — they make meaning. The day our story quietly started ❤️</div>
+<div>10 Sep 2024 — <b>When Missing You Felt Natural 💞</b><br>Your absence felt heavier than expected, your presence felt like comfort. That’s when I knew my heart made space for you 😌💗</div>
+<div>30 Oct 2024 — <b>The Day Your Voice Stayed With Me 🎧💗</b><br>Your voice didn’t just reach my ears — it wrapped around my heart forever 💓</div>
+<div>1 Jan 2025 — <b>The Day I Chose You Out Loud 💘</b><br>I didn’t promise perfection. I just chose honesty — and you ❤️</div>
+<div>20 Jun 2025 — <b>The Day I Celebrated You 🎂💞</b><br>I thanked the universe for your smile, your voice, your presence in my life 💗</div>
+<div>19 Aug 2025 — <b>The Day I Heard You Say My Name 📞💓</b><br>Your voice saying my name stayed wrapped around my heart even after the call ended ❤️</div>
+<div>Today — <b>Still Choosing You ♾️💖</b><br>If love asks me to choose, it will always be you. Always. Forever. ❤️</div>
+</div>
+</section><section>
+<h2>A Hug From Me To You 🫂💗</h2>
+<div class="timeline">
+<div>This is not just a gift. This is me wrapping my arms around you when I can’t be there 🫂💗</div>
+<div>Every word here is a kiss 😘 Every line is my hand on your back 💞</div>
+<div>I want you to feel safe, loved, chosen, and spoiled with affection 💕</div>
+<div>If you miss me, come here. If you feel low, come here. If you’re happy, still come here ❤️</div>
+<div>I’m hugging you slowly… like I never want to let go 🥹💘</div>
+<div>This hug says: I’m yours. I care. I love you more than words. And I’m right here 🤍🫂💖</div>
 </div>
 </section><section>
 <h2>Daily Love Letters 💌</h2>
-<div class="card">Good Morning My Tanya ❤️ Wake up to my hugs 🤗</div>
-<div class="card">You are my Queen 👑💖</div>
-<div class="card">Missing your smile 🥰</div>
-<div class="card">Sending kisses 💋💋💋</div>
-<div class="card">Forever yours Praduym ❤️</div>
-</section><section>
-<h2>Photo Gallery of Us 📸💕</h2>
-<div class="gallery">
-<div>My Beautiful Tanya 🥰</div>
-<div>Forever Hug 🤗</div>
-<div>Kiss Memory 💋</div>
-<div>Love Forever ❤️</div>
-<div>Smile Queen 👑</div>
-<div>Our Journey 🌹</div>
+<div class="timeline">
+<div>Good Morning My Queen 👑❤️</div>
+<div>I Miss You Every Second 💋</div>
+<div>Your Smile Is My Peace 🥰</div>
+<div>I Hug You Forever 🤗</div>
+<div>I Kiss You Forever 💋</div>
+<div>I Love You Forever Tanya ❤️</div>
 </div>
 </section><section>
 <h2>Love Quiz ❤️</h2>
-<p>How much do I love Tanya?</p>
-<button onclick="quiz()">Check Answer 💕</button>
-<p id="quizResult"></p>
+<button class="quizBtn" onclick="quizLove()">How Much I Love Tanya?</button>
+<h2 id="result"></h2>
+<img class="cardGif" src="https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif">
 </section><section>
-<h2>Voice Message 🎧</h2>
-<audio controls>
-<source src="#">
-</audio>
-<p>I Love You Tanya ❤️</p>
-</section><section>
-<h2>Promise Wall 🤗💋</h2>
-<div class="promise">
-I'll hug you every morning 🤗 | Kiss you every night 💋 | Love you forever ❤️ | Stay yours forever 🥰 | Hold your hand always ✨
+<h2>Promise Wall 💍</h2>
+<div class="promiseWall">
+I will hug you every morning 🤗 | kiss you every night 💋 | love you forever ❤️ | walk with you forever 👣 | protect you always 🛡️ | stay yours forever 💖 | smile with you forever 😊 | dream with you forever 🌙
 </div>
+</section><section class="sunrise">
+<h2>Tanya You Are My Sunrise And My Sunset 🌅❤️</h2>
 </section><section>
-<h2>Sunrise Love 🌅</h2>
-<p>Our love rises every dawn 🌅 Tanya you're my sunrise 🥰</p>
-</section><section>
-<h2>Music for My Love 🎵</h2>
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v" width="300" height="80"></iframe>
+<h2>Our Song Forever 🎶</h2>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v" width="320" height="80"></iframe>
+</section><section class="infinity">
+Tanya ❤️ Praduym Forever ∞ 💍✨
 </section><footer>
-<h2>Tanya + Praduym Forever ❤️💍</h2>
-<p id="timer"></p>
+Tanya ❤️ Praduym Forever 💍✨
+<div class="clock" id="loveClock"></div>
 </footer><script>
-function loveExplosion(){
-alert("I LOVE YOU TANYA FOREVER ❤️❤️❤️");
+function explodeHearts(){
+for(let i=0;i<30;i++){
+let heart=document.createElement("div")
+heart.innerHTML="❤️"
+heart.className="heart"
+heart.style.left=Math.random()*100+"vw"
+heart.style.animationDuration=(3+Math.random()*3)+"s"
+document.body.appendChild(heart)
+setTimeout(()=>heart.remove(),6000)
+}
 }
 
-function quiz(){
-document.getElementById("quizResult").innerText="1000000% Forever ❤️
+function quizLove(){
+document.getElementById("result").innerText="Infinity × Infinity × Infinity = My Love For Tanya ❤️🔥"
+explodeHearts()
+}
+
+let startDate=new Date("2024-01-01")
+setInterval(()=>{
+let now=new Date()
+let diff=Math.floor((now-startDate)/1000)
+document.getElementById("loveClock").innerText="Seconds Loving Tanya: "+diff
+},1000)
+
+// sparkle cursor effect
+
+document.addEventListener("mousemove",e=>{
+let sparkle=document.createElement("div")
+sparkle.className="sparkle"
+sparkle.innerHTML="✨"
+sparkle.style.left=e.pageX+"px"
+sparkle.style.top=e.pageY+"px"
+document.body.appendChild(sparkle)
+setTimeout(()=>sparkle.remove(),500)
+})
+
+</script></body>
+</html>
