@@ -3,51 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Healing Princess Mode 🌸</title>
+<title>Princess Smile Back World 👑💋</title>
 
 <style>
 
 body{
 font-family:'Segoe UI';
-background:linear-gradient(180deg,#ffe4ec,#fff7dc,#eafff5);
+background:linear-gradient(180deg,#ffe6f2,#fff7dc,#f0fff8);
 text-align:center;
-padding:40px;
+padding:30px;
 overflow-x:hidden;
 }
 
 h1{
-color:#ff4da6;
-font-size:46px;
-animation:heartbeat 2s infinite;
+color:#ff1493;
+font-size:48px;
+animation:beat 2s infinite;
 }
 
-@keyframes heartbeat{
+@keyframes beat{
 0%{transform:scale(1);}
-50%{transform:scale(1.06);}
+50%{transform:scale(1.05);}
 100%{transform:scale(1);}
 }
 
 .card{
 background:white;
-padding:45px;
+padding:40px;
 border-radius:35px;
 margin:25px auto;
-max-width:720px;
-box-shadow:0 20px 60px rgba(255,105,180,.25);
+max-width:750px;
+box-shadow:0 20px 60px rgba(255,105,180,.3);
 font-size:22px;
 line-height:1.8;
 }
 
 button{
-padding:20px 40px;
+padding:18px 38px;
 border:none;
 border-radius:50px;
-background:linear-gradient(45deg,#ff7ac6,#ff4da6);
+background:linear-gradient(45deg,#ff4da6,#ff1493);
 color:white;
 font-size:20px;
 cursor:pointer;
-margin:15px;
+margin:12px;
 }
 
 button:hover{
@@ -56,13 +55,19 @@ transform:scale(1.08);
 
 .float{
 position:fixed;
-font-size:28px;
-animation:rise 7s linear infinite;
+font-size:30px;
+animation:rise 6s linear infinite;
 }
 
 @keyframes rise{
 0%{transform:translateY(100vh);}
 100%{transform:translateY(-120px);}
+}
+
+.game{
+font-size:40px;
+position:absolute;
+cursor:pointer;
 }
 
 </style>
@@ -72,96 +77,277 @@ animation:rise 7s linear infinite;
 
 <script>
 
-alert("🌸 Healing Princess Mode Activated 🌸\n\nDay-3 Comfort Protection still ON for my Tanya 🤍");
+alert("👑 Smile Back Princess Mode Activated 👑\nDay-4 Recovery Celebration for my Tanya 💋");
 
 </script>
 
 
-<h1>🌸 My Strongest Princess Tanya 🌸</h1>
+<h1>👑 My Brave Princess Tanya 👑</h1>
 
 
 <div class="card">
 
-Today is **Day-3**
+These last 4 days…
 
-and I just want to tell you something from my heart 🤍
+Day-1 → I stayed beside you 🤍  
+Day-2 → I protected you 🫂  
+Day-3 → I held you gently 🌸  
+Day-4 → I’m here to make you smile again 😊💗
 
-<br><br>
-
-I stayed with you on Day-1  
-I protected you on Day-2  
-and today on Day-3…
-
-I’m still right here beside you 🫂
-
-<br><br>
-
-because loving you means
-
-staying with you even on your tired days 🌸
-
-<br><br>
+Because loving you means staying with you even on your difficult days.
 
 If I was there right now…
 
-I would gently hold your hand  
-pull you a little closer  
-and let you rest your head on my shoulder 🤍
+I would hold your face softly  
+look into your eyes  
+and give you the sweetest forehead kiss 💋
 
 </div>
 
 
-
-<button onclick="hug()">🤗 Healing Hug From Me</button>
-<button onclick="kiss()">💋 Soft Forehead Kiss</button>
-<button onclick="stay()">🤍 I’m Still Beside You</button>
-
+<button onclick="kissRain()">💋 Kiss Rain</button>
+<button onclick="hugRain()">🤗 Hug Shower</button>
+<button onclick="loveRain()">💖 Love Explosion</button>
 
 
 <div class="card">
 
 💌 Message From Your Praduym 💌
 
-<br><br>
+You were strong  
+you were patient  
+you were beautiful even in pain
 
-These last 3 days
+and I am honestly very proud of my Tanya 👑🌸
 
-your body worked so hard
-
-and I watched my strongest girl handle everything so bravely 🥺
-
-<br><br>
-
-I am really proud of you Tanya 🤍
-
-very very proud
-
-<br><br>
-
-Even when pain becomes less
-
-my care for you will never become less 💗
+Today is your recovery smile day 😊
 
 </div>
 
 
+<!-- GAME 1 -->
+
+<div class="card">
+
+🎮 GAME 1 — Catch My Kisses 💋
+
+Score:
+<span id="score">0</span>
+
+</div>
+
 
 <script>
 
-function hug(){
-alert("Sending my warm healing hug to my princess 🤗🌸");
-create("🤗");
+let score=0;
+
+function createKiss(){
+
+let kiss=document.createElement("div");
+
+kiss.innerHTML="💋";
+
+kiss.className="game";
+
+kiss.style.left=Math.random()*90+"%";
+
+kiss.style.top=Math.random()*80+"%";
+
+kiss.onclick=function(){
+
+score++;
+
+document.getElementById("score").innerText=score;
+
+kiss.remove();
+
+};
+
+document.body.appendChild(kiss);
+
+setTimeout(()=>kiss.remove(),2000);
+
 }
 
-function kiss(){
-alert("Soft forehead kiss delivered with love 💋");
-create("💋");
+setInterval(createKiss,900);
+
+</script>
+
+
+<!-- GAME 2 -->
+
+<div class="card">
+
+🎮 GAME 2 — Find My Hidden Hug 🤗
+
+Score:
+<span id="hugscore">0</span>
+
+</div>
+
+
+<script>
+
+let hugscore=0;
+
+function createHug(){
+
+let hug=document.createElement("div");
+
+hug.innerHTML="🤗";
+
+hug.className="game";
+
+hug.style.left=Math.random()*90+"%";
+
+hug.style.top=Math.random()*80+"%";
+
+hug.onclick=function(){
+
+hugscore++;
+
+document.getElementById("hugscore").innerText=hugscore;
+
+hug.remove();
+
+};
+
+document.body.appendChild(hug);
+
+setTimeout(()=>hug.remove(),2500);
+
 }
 
-function stay(){
-alert("I'm holding your hand even now 🤍");
-create("🤍");
+setInterval(createHug,1500);
+
+</script>
+
+
+<!-- GAME 3 -->
+
+<div class="card">
+
+🎮 GAME 3 — Unlock My Secret Message 💌
+
+Collect 12 kisses first
+
+<button onclick="secret()">Unlock Message</button>
+
+</div>
+
+
+<script>
+
+function secret(){
+
+if(score>=12){
+
+alert(
+
+"💌 SECRET LOVE MESSAGE 💌\n\n"
+
++
+
+"I stayed with you during these days\n"
+
++
+
+"and today I just want to make you smile again 💋\n\n"
+
++
+
+"I wish I could hug you right now\n"
+
++
+
+"Love you forever my Tanya 👑🤍"
+
+);
+
 }
+
+else{
+
+alert("Collect more kisses first 💋");
+
+}
+
+}
+
+</script>
+
+
+<div class="card">
+
+💋 Romantic Moment Just For You 💋
+
+If I was there today…
+
+I would sit beside you  
+pull you a little closer  
+and whisper softly:
+
+“You handled everything so bravely… I’m proud of you my princess 👑”
+
+</div>
+
+
+<div class="card">
+
+🌙 My Day-4 Promise 🌙
+
+Even when your pain days end
+
+my care never ends 🤍
+
+Sending today:
+
+400 hugs 🤗  
+300 kisses 💋  
+infinite love ♾️💗
+
+You are my strongest girl
+
+and I love seeing you smile again 😊
+
+</div>
+
+
+<button onclick="forever()">💍 Open My Forever Promise</button>
+
+
+<script>
+
+function forever(){
+
+alert(
+
+"💍 FOREVER PROMISE 💍\n\n"
+
++
+
+"I stayed with you during these 4 days\n"
+
++
+
+"and I will stay with you during every day of life too 🤍\n\n"
+
++
+
+"Always yours,\nPraduym 👑💋"
+
+);
+
+}
+
+</script>
+
+
+<script>
+
+function kissRain(){create("💋");}
+function hugRain(){create("🤗");}
+function loveRain(){create("💖");}
 
 function create(symbol){
 
@@ -180,71 +366,6 @@ document.body.appendChild(e);
 setTimeout(()=>e.remove(),6000);
 
 }
-
-}
-
-</script>
-
-
-
-<div class="card">
-
-🌙 My Day-3 Promise To My Tanya 🌙
-
-<br><br>
-
-I didn’t just love you on your happy days
-
-I stayed with you on your difficult days too 🤍
-
-<br><br>
-
-Sending today:
-
-300 gentle hugs 🤗  
-200 soft forehead kisses 💋  
-and one forever heart ♾️💗
-
-<br><br>
-
-You handled these days so bravely
-
-and I stayed beside you through all of them
-
-because
-
-you are not just special to me
-
-you are my Tanya 🫂
-
-</div>
-
-
-
-<button onclick="secret()">🌸 Open My Secret Heart Message</button>
-
-
-<script>
-
-function secret(){
-
-alert(
-
-"🌸 SECRET MESSAGE 🌸\n\n"
-
-+
-
-"I didn’t leave you alone during these days\n"
-
-+
-
-"and I will never leave you alone in life too 🤍\n\n"
-
-+
-
-"Always yours,\nPraduym 🫂💗"
-
-);
 
 }
 
