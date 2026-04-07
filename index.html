@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Princess Mission for Tanya 👑</title>
+<title>For My Tanya 👑🌸</title>
 
 <style>
 
 body{
 font-family:'Segoe UI';
-background:linear-gradient(180deg,#ffe6f2,#fffbe6,#eafff5);
+background:linear-gradient(180deg,#ffe6f2,#fff9e6,#f3fff7);
 text-align:center;
-padding:30px;
+padding:40px;
 overflow-x:hidden;
 }
 
 h1{
 color:#ff1493;
-font-size:48px;
+font-size:50px;
 animation:heartbeat 2s infinite;
 }
 
@@ -30,24 +30,24 @@ animation:heartbeat 2s infinite;
 
 .card{
 background:white;
-padding:40px;
-border-radius:35px;
-margin:25px auto;
-max-width:760px;
-box-shadow:0 20px 60px rgba(255,105,180,.3);
-font-size:22px;
+padding:45px;
+border-radius:40px;
+margin:30px auto;
+max-width:750px;
+box-shadow:0 25px 70px rgba(255,105,180,.3);
+font-size:23px;
 line-height:1.9;
 }
 
 button{
-padding:18px 40px;
+padding:20px 42px;
 border:none;
-border-radius:50px;
+border-radius:60px;
 background:linear-gradient(45deg,#ff4da6,#ff1493);
 color:white;
-font-size:20px;
+font-size:21px;
 cursor:pointer;
-margin:12px;
+margin:15px;
 }
 
 button:hover{
@@ -65,19 +65,6 @@ animation:rise 6s linear infinite;
 100%{transform:translateY(-120px);}
 }
 
-.game{
-position:absolute;
-font-size:40px;
-cursor:pointer;
-}
-
-.memory{
-font-size:40px;
-cursor:pointer;
-margin:10px;
-display:inline-block;
-}
-
 </style>
 </head>
 
@@ -85,260 +72,86 @@ display:inline-block;
 
 <script>
 
-let pass=prompt("👑 Princess Entry Password 👑\nHint: our forever promise");
-
-if(pass!=="tanya_praduym_forever"){
-
-document.body.innerHTML="<h1>This world is only for Tanya 🤍</h1>";
-
-}
+alert("🌸 Love + Proud Mode Activated For My Tanya 👑");
 
 </script>
 
 
-<h1>👑 Princess Mission Activated 👑</h1>
+<h1>👑 My Beautiful Tanya 👑</h1>
 
 
 <div class="card">
 
-My beautiful Tanya 🌸
+These last few days your body worked so hard 🌸
 
-Tomorrow is your **first internship training day** 🌟
+and today I just want to tell you something honestly:
 
-and I just want you to remember something important:
+I am really proud of you 🤍
 
-You are capable  
-You are confident  
-You are impressive
-
-and I am honestly very proud of you 👑
+You stayed strong  
+you stayed patient  
+and you stayed your sweet self even when tired 💗
 
 </div>
 
 
-<button onclick="kissRain()">💋 Kiss Rain</button>
-<button onclick="hugRain()">🤗 Hug Shower</button>
-<button onclick="loveRain()">💖 Love Explosion</button>
+<div class="card">
+
+Now tomorrow is a very special day for you 🌟
+
+your **first internship training day**
+
+and I just want you to remember:
+
+You are smart  
+You are capable  
+You are confident
+
+and honestly…
+
+you are going to do amazing there 👑
+
+</div>
 
 
 <div class="card">
 
-If I was there tonight
+If I was there tonight…
 
 I would sit beside you quietly  
-hold your hand  
-and give you a soft forehead kiss 💋
+hold your hand gently  
+pull you a little closer
+
+and give you one soft forehead kiss 💋
 
 and say:
 
-“You’re going to do amazing tomorrow”
+“Relax… everything will go beautifully tomorrow.”
 
 </div>
 
 
-<div class="card">
-
-🎮 PRINCESS MISSION LEVEL 1 🎮
-
-Catch 20 lucky kisses 💋
-
-Score:
-<span id="score">0</span>
-
-</div>
+<button onclick="hug()">🤗 Take My Hug</button>
+<button onclick="kiss()">💋 Lucky Kiss For Tomorrow</button>
+<button onclick="love()">💖 Feel My Love</button>
 
 
 <script>
 
-let score=0;
-
-function createKiss(){
-
-let kiss=document.createElement("div");
-
-kiss.innerHTML="💋";
-
-kiss.className="game";
-
-kiss.style.left=Math.random()*90+"%";
-
-kiss.style.top=Math.random()*80+"%";
-
-kiss.onclick=function(){
-
-score++;
-
-document.getElementById("score").innerText=score;
-
-kiss.remove();
-
-};
-
-document.body.appendChild(kiss);
-
-setTimeout(()=>kiss.remove(),1200);
-
+function hug(){
+alert("Sending my warmest hug to you 🤗");
+create("🤗");
 }
 
-setInterval(createKiss,700);
-
-</script>
-
-
-<div class="card">
-
-🎮 PRINCESS MISSION LEVEL 2 🎮
-
-Catch 15 hidden hugs 🤗
-
-Score:
-<span id="hugscore">0</span>
-
-</div>
-
-
-<script>
-
-let hugscore=0;
-
-function createHug(){
-
-let hug=document.createElement("div");
-
-hug.innerHTML="🤗";
-
-hug.className="game";
-
-hug.style.left=Math.random()*90+"%";
-
-hug.style.top=Math.random()*80+"%";
-
-hug.onclick=function(){
-
-hugscore++;
-
-document.getElementById("hugscore").innerText=hugscore;
-
-hug.remove();
-
-};
-
-document.body.appendChild(hug);
-
-setTimeout(()=>hug.remove(),900);
-
+function kiss(){
+alert("One lucky forehead kiss for tomorrow 💋");
+create("💋");
 }
 
-setInterval(createHug,1200);
-
-</script>
-
-
-<div class="card">
-
-🎮 FINAL LEVEL 🎮
-
-Match symbols to unlock my message 💖
-
-</div>
-
-
-<div id="memoryGame"></div>
-
-
-<script>
-
-let symbols=["💖","💖","💋","💋","🤗","🤗"];
-
-symbols.sort(()=>0.5-Math.random());
-
-let first=null;
-
-let matches=0;
-
-symbols.forEach(symbol=>{
-
-let div=document.createElement("div");
-
-div.innerHTML="❓";
-
-div.className="memory";
-
-div.dataset.symbol=symbol;
-
-div.onclick=function(){
-
-if(div.innerHTML==="❓"){
-
-div.innerHTML=symbol;
-
-if(!first){
-
-first=div;
-
+function love(){
+alert("All my love is with you tomorrow 👑");
+create("💖");
 }
-
-else{
-
-if(first.dataset.symbol===symbol){
-
-matches++;
-
-if(matches===3){
-
-alert("💌 SECRET MESSAGE 💌\n\nI believe in you completely 🌟\n\nTomorrow is going to be a beautiful start for you 👑");
-
-}
-
-first=null;
-
-}
-
-else{
-
-setTimeout(()=>{
-
-div.innerHTML="❓";
-
-first.innerHTML="❓";
-
-first=null;
-
-},600);
-
-}
-
-}
-
-}
-
-};
-
-document.getElementById("memoryGame").appendChild(div);
-
-});
-
-</script>
-
-
-<div class="card">
-
-🌙 Tonight’s Promise 🌙
-
-Sleep peacefully today
-
-Tomorrow you walk confidently
-
-because someone believes in you completely 🤍
-
-</div>
-
-
-<script>
-
-function kissRain(){create("💋");}
-function hugRain(){create("🤗");}
-function loveRain(){create("💖");}
 
 function create(symbol){
 
@@ -357,6 +170,64 @@ document.body.appendChild(e);
 setTimeout(()=>e.remove(),6000);
 
 }
+
+}
+
+</script>
+
+
+<div class="card">
+
+🌙 Tonight's Message For You 🌙
+
+Sleep peacefully today 🌸
+
+Tomorrow walk confidently  
+smile naturally  
+and just be yourself
+
+because that is already enough to shine ✨
+
+</div>
+
+
+<div class="card">
+
+💌 One More Thing From My Heart 💌
+
+Seeing you grow stronger every day
+
+makes me feel really lucky to have you in my life 👑
+
+and I love seeing my Tanya moving forward beautifully like this 💗
+
+</div>
+
+
+<button onclick="secret()">💖 Open My Secret Message</button>
+
+
+<script>
+
+function secret(){
+
+alert(
+
+"💖 SECRET MESSAGE 💖\n\n"
+
++
+
+"I am really proud of you\n"
+
++
+
+"and I truly believe in you for tomorrow 🌟\n\n"
+
++
+
+"Sleep peacefully my Tanya 👑💋"
+
+);
 
 }
 
