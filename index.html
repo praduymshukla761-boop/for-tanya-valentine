@@ -1,238 +1,491 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Tanya ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<title>For My Tanya 👑🌸</title>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ffeef8 0%, #e8d5f1 25%, #ffd8d2 50%, #fff8e8 75%, #f9f5ff 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            position: relative;
+            color: #4a2c5a;
+        }
 
-<style>
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-body{
-font-family:'Segoe UI';
-background:linear-gradient(180deg,#ffe6f2,#fff9e6,#f3fff7);
-text-align:center;
-padding:40px;
-overflow-x:hidden;
-}
+        /* Floating Hearts */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            transform: rotate(-45deg);
+            animation: float 6s infinite linear;
+            opacity: 0.7;
+        }
 
-h1{
-color:#ff1493;
-font-size:50px;
-animation:heartbeat 2s infinite;
-}
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            border-radius: 50%;
+            transform: rotate(-45deg);
+        }
 
-@keyframes heartbeat{
-0%{transform:scale(1);}
-50%{transform:scale(1.06);}
-100%{transform:scale(1);}
-}
+        .heart:before { transform: rotate(-90deg) translate(10px, 0); }
+        .heart:after { transform: rotate(90deg) translate(10px, 0); }
 
-.card{
-background:white;
-padding:45px;
-border-radius:40px;
-margin:30px auto;
-max-width:750px;
-box-shadow:0 25px 70px rgba(255,105,180,.3);
-font-size:23px;
-line-height:1.9;
-}
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(-45deg) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(405deg) scale(1);
+                opacity: 0;
+            }
+        }
 
-button{
-padding:20px 42px;
-border:none;
-border-radius:60px;
-background:linear-gradient(45deg,#ff4da6,#ff1493);
-color:white;
-font-size:21px;
-cursor:pointer;
-margin:15px;
-}
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
 
-button:hover{
-transform:scale(1.08);
-}
+        @keyframes sparkle {
+            0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1) rotate(180deg); opacity: 1; }
+        }
 
-.float{
-position:fixed;
-font-size:30px;
-animation:rise 6s linear infinite;
-}
+        /* Music Toggle */
+        .music-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
 
-@keyframes rise{
-0%{transform:translateY(100vh);}
-100%{transform:translateY(-120px);}
-}
+        .music-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
 
-</style>
+        .music-toggle.playing { background: linear-gradient(45deg, #ff9a9e, #fecfef); }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Section Styles */
+        .section {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideInUp 1s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+        .section:nth-child(6) { animation-delay: 1.2s; }
+        .section:nth-child(7) { animation-delay: 1.4s; }
+        .section:nth-child(8) { animation-delay: 1.6s; }
+
+        @keyframes slideInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .section h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(28px, 5vw, 48px);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #d946ef, #ec4899, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(255,255,255,0.5);
+        }
+
+        .section p {
+            font-size: clamp(16px, 3vw, 20px);
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #5a3b6a;
+        }
+
+        /* Hug Animation */
+        .hug-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,182,193,0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: hugPulse 2s infinite;
+        }
+
+        @keyframes hugPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+            50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+        }
+
+        /* Button Styles */
+        .glow-btn {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #8b1e4a;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255,154,158,0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .glow-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(255,154,158,0.6);
+        }
+
+        .glow-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Kiss Sparkle */
+        .kiss-sparkle {
+            position: relative;
+            display: inline-block;
+        }
+
+        .kiss-sparkle::after {
+            content: '💋';
+            position: absolute;
+            top: -10px;
+            right: -30px;
+            font-size: 30px;
+            animation: kissFloat 2s infinite;
+        }
+
+        @keyframes kissFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Heartbeat */
+        .heartbeat {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            border-radius: 50%;
+            animation: heartbeat 1.5s infinite;
+            margin: 0 auto 20px;
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+
+        /* Infinity Animation */
+        .infinity {
+            font-size: 50px;
+            animation: glowInfinity 2s infinite;
+            display: block;
+            margin: 20px auto;
+        }
+
+        @keyframes glowInfinity {
+            0%, 100% { text-shadow: 0 0 20px #ffd700; }
+            50% { text-shadow: 0 0 40px #ffd700, 0 0 60px #ff6b9d; }
+        }
+
+        /* Popup */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, #ffeef8, #e8d5f1);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 100px rgba(0,0,0,0.3);
+            text-align: center;
+            z-index: 2000;
+            max-width: 90vw;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255,255,255,0.5);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .popup.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .popup h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(28px, 6vw, 48px);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #d946ef, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            .section { padding: 30px 20px; margin: 20px 10px; }
+            .music-toggle { width: 50px; height: 50px; font-size: 20px; top: 15px; right: 15px; }
+        }
+
+        /* Scroll Progress */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b9d, #ec4899);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+    </style>
 </head>
-
 <body>
-
-<script>
-
-alert("🌸 Love + Proud Mode Activated For My Tanya 👑");
-
-</script>
-
-
-<h1>👑 My Beautiful Tanya 👑</h1>
-
-
-<div class="card">
-
-These last few days your body worked so hard 🌸
-
-and today I just want to tell you something honestly:
-
-I am really proud of you 🤍
-
-You stayed strong  
-you stayed patient  
-and you stayed your sweet self even when tired 💗
-
-</div>
-
-
-<div class="card">
-
-Now tomorrow is a very special day for you 🌟
-
-your **first internship training day**
-
-and I just want you to remember:
-
-You are smart  
-You are capable  
-You are confident
-
-and honestly…
-
-you are going to do amazing there 👑
-
-</div>
-
-
-<div class="card">
-
-If I was there tonight…
-
-I would sit beside you quietly  
-hold your hand gently  
-pull you a little closer
-
-and give you one soft forehead kiss 💋
-
-and say:
-
-“Relax… everything will go beautifully tomorrow.”
-
-</div>
-
-
-<button onclick="hug()">🤗 Take My Hug</button>
-<button onclick="kiss()">💋 Lucky Kiss For Tomorrow</button>
-<button onclick="love()">💖 Feel My Love</button>
-
-
-<script>
-
-function hug(){
-alert("Sending my warmest hug to you 🤗");
-create("🤗");
-}
-
-function kiss(){
-alert("One lucky forehead kiss for tomorrow 💋");
-create("💋");
-}
-
-function love(){
-alert("All my love is with you tomorrow 👑");
-create("💖");
-}
-
-function create(symbol){
-
-for(let i=0;i<25;i++){
-
-let e=document.createElement("div");
-
-e.className="float";
-
-e.innerHTML=symbol;
-
-e.style.left=Math.random()*100+"%";
-
-document.body.appendChild(e);
-
-setTimeout(()=>e.remove(),6000);
-
-}
-
-}
-
-</script>
-
-
-<div class="card">
-
-🌙 Tonight's Message For You 🌙
-
-Sleep peacefully today 🌸
-
-Tomorrow walk confidently  
-smile naturally  
-and just be yourself
-
-because that is already enough to shine ✨
-
-</div>
-
-
-<div class="card">
-
-💌 One More Thing From My Heart 💌
-
-Seeing you grow stronger every day
-
-makes me feel really lucky to have you in my life 👑
-
-and I love seeing my Tanya moving forward beautifully like this 💗
-
-</div>
-
-
-<button onclick="secret()">💖 Open My Secret Message</button>
-
-
-<script>
-
-function secret(){
-
-alert(
-
-"💖 SECRET MESSAGE 💖\n\n"
-
-+
-
-"I am really proud of you\n"
-
-+
-
-"and I truly believe in you for tomorrow 🌟\n\n"
-
-+
-
-"Sleep peacefully my Tanya 👑💋"
-
-);
-
-}
-
-</script>
-
-
-</body>
-</html>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <button class="music-toggle playing" id="musicToggle">🎵</button>
+    
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <button class="close-popup" id="closePopup">×</button>
+        <h2>I love you more than yesterday<br>but less than tomorrow ❤️</h2>
+    </div>
+
+    <div class="container">
+        <!-- SECTION 1 -->
+        <div class="section">
+            <h1>Good Morning My Strongest Girl ❤️</h1>
+            <p>Today is your very first internship day<br>
+            and I am already so proud of you.</p>
+            <p>Even during your periods<br>
+            you are standing strong and moving forward —<br>
+            and that makes you my real superhero.</p>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="section">
+            <div class="hug-glow"></div>
+            <h1>I know these days are uncomfortable for you 🤗</h1>
+            <p>If I were there,<br>
+            I would hug you tightly<br>
+            and not let you feel even a little pain</p>
+            <p>Just imagine my arms around you right now.</p>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="section">
+            <h1>Today you are stepping into a new journey ✨</h1>
+            <p>Always remember —</p>
+            <p><strong>You are intelligent</strong><br>
+            <strong>You are capable</strong><br>
+            <strong>You are beautiful</strong><br>
+            <strong>You are brave</strong></p>
+            <p>And I believe in you more than anyone else in this world.</p>
+            <button class="glow-btn">I am proud of you Tanya ❤️</button>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="section">
+            <h1 class="kiss-sparkle">You are not just my wife 💋</h1>
+            <p>You are my peace.<br>
+            My motivation.<br>
+            My safe place.<br>
+            My future.<br>
+            And my forever.</p>
+        </div>
+
+        <!-- SECTION 5 -->
+        <div class="section">
+            <div class="heartbeat"></div>
+            <h1>Please take care of yourself today 💕</h1>
+            <p>Drink warm water.<br>
+            Take rest whenever possible.<br>
+            Don't stress too much.</p>
+            <p>And remember —<br>
+            even if I am not beside you physically,<br>
+            <strong>my love is always holding your hand.</strong></p>
+        </div>
+
+        <!-- SECTION 6 -->
+        <div class="section">
+            <button class="glow-btn" id="hugButton" style="font-size: 22px; padding: 20px 50px;">
+                Tap here if you need one more hug 🤗
+            </button>
+        </div>
+
+        <!-- SECTION 7 -->
+        <div class="section">
+            <h1>No matter how busy life becomes ♾️</h1>
+            <span class="infinity">♾️</span>
+            <p>I will always stand beside you,<br>
+            support you,<br>
+            protect you,<br>
+            respect you,<br>
+            and love you more every single day.</p>
+        </div>
+
+        <!-- SECTION 8 -->
+        <div class="section">
+            <h1>Best wishes for your first internship day my love ❤️</h1>
+            <p>Go shine like the queen you are.</p>
+            <p><strong>Your husband is always hugging you<br>
+            from his heart 🤗💋</strong></p>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <!-- Note: You'll need to host the instrumental version of "Until I Found You" -->
+        <!-- For demo purposes, you can replace with any soft instrumental track -->
+        <!-- Or use this free alternative: https://www.bensound.com/royalty-free-music/track/ukulele -->
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 8000);
+        }
+
+        // Create sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 2000);
+        }
+
+        // Music controls
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        
+        musicToggle.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.volume = 0.3;
+                bgMusic.play().catch(e => console.log('Autoplay prevented'));
+                musicToggle.classList.add('playing');
+                musicToggle.textContent = '🎵';
+            } else {
+                bgMusic.pause();
+                musicToggle.classList.remove('playing');
+                musicToggle.text
