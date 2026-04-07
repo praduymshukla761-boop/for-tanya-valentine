@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Princess Smile Back World 👑💋</title>
+
+<title>Princess Mission for Tanya 👑</title>
 
 <style>
 
 body{
 font-family:'Segoe UI';
-background:linear-gradient(180deg,#ffe6f2,#fff7dc,#f0fff8);
+background:linear-gradient(180deg,#ffe6f2,#fffbe6,#eafff5);
 text-align:center;
 padding:30px;
 overflow-x:hidden;
@@ -18,12 +19,12 @@ overflow-x:hidden;
 h1{
 color:#ff1493;
 font-size:48px;
-animation:beat 2s infinite;
+animation:heartbeat 2s infinite;
 }
 
-@keyframes beat{
+@keyframes heartbeat{
 0%{transform:scale(1);}
-50%{transform:scale(1.05);}
+50%{transform:scale(1.06);}
 100%{transform:scale(1);}
 }
 
@@ -32,14 +33,14 @@ background:white;
 padding:40px;
 border-radius:35px;
 margin:25px auto;
-max-width:750px;
+max-width:760px;
 box-shadow:0 20px 60px rgba(255,105,180,.3);
 font-size:22px;
-line-height:1.8;
+line-height:1.9;
 }
 
 button{
-padding:18px 38px;
+padding:18px 40px;
 border:none;
 border-radius:50px;
 background:linear-gradient(45deg,#ff4da6,#ff1493);
@@ -65,9 +66,16 @@ animation:rise 6s linear infinite;
 }
 
 .game{
-font-size:40px;
 position:absolute;
+font-size:40px;
 cursor:pointer;
+}
+
+.memory{
+font-size:40px;
+cursor:pointer;
+margin:10px;
+display:inline-block;
 }
 
 </style>
@@ -77,30 +85,33 @@ cursor:pointer;
 
 <script>
 
-alert("👑 Smile Back Princess Mode Activated 👑\nDay-4 Recovery Celebration for my Tanya 💋");
+let pass=prompt("👑 Princess Entry Password 👑\nHint: our forever promise");
+
+if(pass!=="tanya_praduym_forever"){
+
+document.body.innerHTML="<h1>This world is only for Tanya 🤍</h1>";
+
+}
 
 </script>
 
 
-<h1>👑 My Brave Princess Tanya 👑</h1>
+<h1>👑 Princess Mission Activated 👑</h1>
 
 
 <div class="card">
 
-These last 4 days…
+My beautiful Tanya 🌸
 
-Day-1 → I stayed beside you 🤍  
-Day-2 → I protected you 🫂  
-Day-3 → I held you gently 🌸  
-Day-4 → I’m here to make you smile again 😊💗
+Tomorrow is your **first internship training day** 🌟
 
-Because loving you means staying with you even on your difficult days.
+and I just want you to remember something important:
 
-If I was there right now…
+You are capable  
+You are confident  
+You are impressive
 
-I would hold your face softly  
-look into your eyes  
-and give you the sweetest forehead kiss 💋
+and I am honestly very proud of you 👑
 
 </div>
 
@@ -112,24 +123,24 @@ and give you the sweetest forehead kiss 💋
 
 <div class="card">
 
-💌 Message From Your Praduym 💌
+If I was there tonight
 
-You were strong  
-you were patient  
-you were beautiful even in pain
+I would sit beside you quietly  
+hold your hand  
+and give you a soft forehead kiss 💋
 
-and I am honestly very proud of my Tanya 👑🌸
+and say:
 
-Today is your recovery smile day 😊
+“You’re going to do amazing tomorrow”
 
 </div>
 
 
-<!-- GAME 1 -->
-
 <div class="card">
 
-🎮 GAME 1 — Catch My Kisses 💋
+🎮 PRINCESS MISSION LEVEL 1 🎮
+
+Catch 20 lucky kisses 💋
 
 Score:
 <span id="score">0</span>
@@ -165,20 +176,20 @@ kiss.remove();
 
 document.body.appendChild(kiss);
 
-setTimeout(()=>kiss.remove(),2000);
+setTimeout(()=>kiss.remove(),1200);
 
 }
 
-setInterval(createKiss,900);
+setInterval(createKiss,700);
 
 </script>
 
 
-<!-- GAME 2 -->
-
 <div class="card">
 
-🎮 GAME 2 — Find My Hidden Hug 🤗
+🎮 PRINCESS MISSION LEVEL 2 🎮
+
+Catch 15 hidden hugs 🤗
 
 Score:
 <span id="hugscore">0</span>
@@ -214,133 +225,113 @@ hug.remove();
 
 document.body.appendChild(hug);
 
-setTimeout(()=>hug.remove(),2500);
+setTimeout(()=>hug.remove(),900);
 
 }
 
-setInterval(createHug,1500);
+setInterval(createHug,1200);
 
 </script>
 
 
-<!-- GAME 3 -->
-
 <div class="card">
 
-🎮 GAME 3 — Unlock My Secret Message 💌
+🎮 FINAL LEVEL 🎮
 
-Collect 12 kisses first
-
-<button onclick="secret()">Unlock Message</button>
+Match symbols to unlock my message 💖
 
 </div>
 
 
+<div id="memoryGame"></div>
+
+
 <script>
 
-function secret(){
+let symbols=["💖","💖","💋","💋","🤗","🤗"];
 
-if(score>=12){
+symbols.sort(()=>0.5-Math.random());
 
-alert(
+let first=null;
 
-"💌 SECRET LOVE MESSAGE 💌\n\n"
+let matches=0;
 
-+
+symbols.forEach(symbol=>{
 
-"I stayed with you during these days\n"
+let div=document.createElement("div");
 
-+
+div.innerHTML="❓";
 
-"and today I just want to make you smile again 💋\n\n"
+div.className="memory";
 
-+
+div.dataset.symbol=symbol;
 
-"I wish I could hug you right now\n"
+div.onclick=function(){
 
-+
+if(div.innerHTML==="❓"){
 
-"Love you forever my Tanya 👑🤍"
+div.innerHTML=symbol;
 
-);
+if(!first){
+
+first=div;
 
 }
 
 else{
 
-alert("Collect more kisses first 💋");
+if(first.dataset.symbol===symbol){
+
+matches++;
+
+if(matches===3){
+
+alert("💌 SECRET MESSAGE 💌\n\nI believe in you completely 🌟\n\nTomorrow is going to be a beautiful start for you 👑");
+
+}
+
+first=null;
+
+}
+
+else{
+
+setTimeout(()=>{
+
+div.innerHTML="❓";
+
+first.innerHTML="❓";
+
+first=null;
+
+},600);
 
 }
 
 }
+
+}
+
+};
+
+document.getElementById("memoryGame").appendChild(div);
+
+});
 
 </script>
 
 
 <div class="card">
 
-💋 Romantic Moment Just For You 💋
+🌙 Tonight’s Promise 🌙
 
-If I was there today…
+Sleep peacefully today
 
-I would sit beside you  
-pull you a little closer  
-and whisper softly:
+Tomorrow you walk confidently
 
-“You handled everything so bravely… I’m proud of you my princess 👑”
+because someone believes in you completely 🤍
 
 </div>
-
-
-<div class="card">
-
-🌙 My Day-4 Promise 🌙
-
-Even when your pain days end
-
-my care never ends 🤍
-
-Sending today:
-
-400 hugs 🤗  
-300 kisses 💋  
-infinite love ♾️💗
-
-You are my strongest girl
-
-and I love seeing you smile again 😊
-
-</div>
-
-
-<button onclick="forever()">💍 Open My Forever Promise</button>
-
-
-<script>
-
-function forever(){
-
-alert(
-
-"💍 FOREVER PROMISE 💍\n\n"
-
-+
-
-"I stayed with you during these 4 days\n"
-
-+
-
-"and I will stay with you during every day of life too 🤍\n\n"
-
-+
-
-"Always yours,\nPraduym 👑💋"
-
-);
-
-}
-
-</script>
 
 
 <script>
@@ -351,7 +342,7 @@ function loveRain(){create("💖");}
 
 function create(symbol){
 
-for(let i=0;i<20;i++){
+for(let i=0;i<25;i++){
 
 let e=document.createElement("div");
 
